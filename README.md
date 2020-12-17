@@ -1,6 +1,10 @@
 
-# Code for "Conditional prediction of consecutive tumor evolution using cancer progression models: What genotype comes next?"
-FIXME: give URL of paper in bioRxiv
+# Code for "Conditional prediction of consecutive tumor evolution using
+cancer progression models: What genotype comes next?"
+
+Juan Diaz-Colunga, Ramon Diaz-Uriarte
+
+https://biorxiv.org/cgi/content/short/2020.12.16.423099v1
 
 
 <!-- We are addressing the performance of Cancer Progression Models (CPMs) as -->
