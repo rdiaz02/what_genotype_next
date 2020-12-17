@@ -1,6 +1,5 @@
 
-# Code for "Conditional prediction of consecutive tumor evolution using
-cancer progression models: What genotype comes next?"
+# Code for "Conditional prediction of consecutive tumor evolution using cancer progression models: What genotype comes next?"
 
 Juan Diaz-Colunga, Ramon Diaz-Uriarte
 
