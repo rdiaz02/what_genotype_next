@@ -1,0 +1,1476 @@
+nohup: ignoring input
+[1] "Wed Jul 22 22:28:12 2020"
+[1] 5664
+Loading required package: grid
+Loading required package: libcoin
+Loading required package: mvtnorm
+Loading required package: lme4
+Loading required package: Matrix
+tree_best: no visible binding for global variable ‘localformula’
+tree_best: no visible binding for global variable ‘localdata’
+tree_best: no visible binding for global variable ‘numGenes’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘numGenes’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘typeLandscape_f’
+tree_best: no visible binding for global variable ‘..allvars’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘sample_size’
+tree_best: no visible binding for global variable ‘sampledProp’
+Warning message:
+In rm(localformula) : object 'localformula' not found
+Warning message:
+In rm(localdata) : object 'localdata' not found
+[1] 2418930
+[1] 2418930
+
+ post sampledProp trimming
+ [1] 2418930
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  1708650  91.3    2621397 140.0  2621397 140.0
+Vcells 51281324 391.3   74688479 569.9 51300372 391.4
+               typeLandscape
+typeLandscape_f Represent. Local maxima    RMF
+            Rep     928755            0      0
+            LM           0       760260      0
+            RMF          0            0 729915
+
+ nrow(localdata) [1] 197460
+
+ nrow(localdata) post-trimming before mfw [1] 195825
+
+ Multiplication factor for weights is  64.67434 
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_BBY_allFL_Inf
+
+ nrow data set =  195825 
+
+    Using minsize =  1958 
+
+   sum of weights =  195825 
+    user   system  elapsed 
+4555.679 5958.112 2784.645 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + SSWM + gamma + epistRSign + numObservedPeaks + 
+    diff_obs_prop + observedProp + fitnessRank + propLocalMax + 
+    typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] nMut in 0, 1, 2, 3, 4, 5, 6, 7, 8
+|   |   [3] propLocalMax <= 0.3321
+|   |   |   [4] nMut in 1, 2, 3, 4, 5, 6, 7
+|   |   |   |   [5] fitnessRank <= 52
+|   |   |   |   |   [6] gamma <= 0.38581
+|   |   |   |   |   |   [7] nMut in 1: n = 2576.48007257595
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2559939 
+|   |   |   |   |   |   [8] nMut in 2, 3, 4, 5, 6, 7
+|   |   |   |   |   |   |   [9] propLocalMax <= 0.02955
+|   |   |   |   |   |   |   |   [10] epistRSign <= 0.00061
+|   |   |   |   |   |   |   |   |   [11] nMut in 2, 3: n = 3871.42198704532
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3325759 
+|   |   |   |   |   |   |   |   |   [12] nMut in 4, 5, 6, 7
+|   |   |   |   |   |   |   |   |   |   [13] nMut in 4, 5: n = 4405.92304596064
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4356314 
+|   |   |   |   |   |   |   |   |   |   [14] nMut in 6, 7: n = 4550.64804379327
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4671077 
+|   |   |   |   |   |   |   |   [15] epistRSign > 0.00061
+|   |   |   |   |   |   |   |   |   [16] nMut in 2, 4, 5: n = 3653.63115688047
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5972793 
+|   |   |   |   |   |   |   |   |   [17] nMut in 3, 6, 7: n = 2027.70215374707
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5571899 
+|   |   |   |   |   |   |   [18] propLocalMax > 0.02955
+|   |   |   |   |   |   |   |   [19] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [20] nMut in 2: n = 2176.21060029972
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4462158 
+|   |   |   |   |   |   |   |   |   [21] nMut in 3: n = 2503.22021723245
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4161835 
+|   |   |   |   |   |   |   |   [22] nMut in 4, 5, 6, 7: n = 3485.49404901973
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.3575775 
+|   |   |   |   |   [23] gamma > 0.38581
+|   |   |   |   |   |   [24] propLocalMax <= 0.02975
+|   |   |   |   |   |   |   [25] epistRSign <= 0.00035
+|   |   |   |   |   |   |   |   [26] nMut in 5, 6
+|   |   |   |   |   |   |   |   |   [27] fitnessRank <= 30
+|   |   |   |   |   |   |   |   |   |   [28] diff_obs_prop <= 5e-05: n = 1959.81673581611
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5578406 
+|   |   |   |   |   |   |   |   |   |   [29] diff_obs_prop > 5e-05: n = 1971.46135020992
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5550795 
+|   |   |   |   |   |   |   |   |   [30] fitnessRank > 30: n = 3753.94105371363
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5867695 
+|   |   |   |   |   |   |   |   [31] nMut in 1, 2, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [32] nMut in 2, 3, 4: n = 3165.04887730206
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5521613 
+|   |   |   |   |   |   |   |   |   [33] nMut in 1, 7
+|   |   |   |   |   |   |   |   |   |   [34] diff_obs_prop <= -5e-04: n = 2747.07480524627
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5503521 
+|   |   |   |   |   |   |   |   |   |   [35] diff_obs_prop > -5e-04: n = 3971.73188387848
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.548684 
+|   |   |   |   |   |   |   [36] epistRSign > 0.00035
+|   |   |   |   |   |   |   |   [37] nMut in 2, 5, 6
+|   |   |   |   |   |   |   |   |   [38] nMut in 5: n = 3272.08490519302
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.615274 
+|   |   |   |   |   |   |   |   |   [39] nMut in 2, 6: n = 3927.80184040722
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6209516 
+|   |   |   |   |   |   |   |   [40] nMut in 1, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [41] nMut in 3, 4: n = 3870.516546326
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.579547 
+|   |   |   |   |   |   |   |   |   [42] nMut in 1, 7: n = 2437.59193366608
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.590571 
+|   |   |   |   |   |   [43] propLocalMax > 0.02975
+|   |   |   |   |   |   |   [44] nMut in 2, 3, 4, 5: n = 2874.30539489491
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4963057 
+|   |   |   |   |   |   |   [45] nMut in 6, 7: n = 2415.6835019754
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4176991 
+|   |   |   |   [46] fitnessRank > 52
+|   |   |   |   |   [47] gamma <= 0.30609
+|   |   |   |   |   |   [48] fitnessRank <= 160
+|   |   |   |   |   |   |   [49] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [50] SSWM <= 0.85146: n = 1958.90482766308
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7272282 
+|   |   |   |   |   |   |   |   [51] SSWM > 0.85146
+|   |   |   |   |   |   |   |   |   [52] nMut in 2: n = 2901.17758195757
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.708422 
+|   |   |   |   |   |   |   |   |   [53] nMut in 3, 4, 5: n = 2364.55843850241
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7020147 
+|   |   |   |   |   |   |   [54] nMut in 1, 6, 7
+|   |   |   |   |   |   |   |   [55] SSWM <= 0.85492: n = 2066.71694759917
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6873817 
+|   |   |   |   |   |   |   |   [56] SSWM > 0.85492: n = 3193.2145511066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6070931 
+|   |   |   |   |   |   [57] fitnessRank > 160
+|   |   |   |   |   |   |   [58] observedProp <= 0.17
+|   |   |   |   |   |   |   |   [59] nMut in 2: n = 2920.08189069021
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7867114 
+|   |   |   |   |   |   |   |   [60] nMut in 1, 3, 4, 5, 6, 7: n = 7210.32518360725
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7605084 
+|   |   |   |   |   |   |   [61] observedProp > 0.17
+|   |   |   |   |   |   |   |   [62] diff_obs_prop <= -0.00065: n = 2786.0378596287
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7320789 
+|   |   |   |   |   |   |   |   [63] diff_obs_prop > -0.00065: n = 3221.46753526621
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7301455 
+|   |   |   |   |   [64] gamma > 0.30609
+|   |   |   |   |   |   [65] epistRSign <= 0.0053
+|   |   |   |   |   |   |   [66] SSWM <= 0.83634
+|   |   |   |   |   |   |   |   [67] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   |   [68] nMut in 2: n = 2421.43951797679
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6369608 
+|   |   |   |   |   |   |   |   |   [69] nMut in 3, 4, 5
+|   |   |   |   |   |   |   |   |   |   [70] diff_obs_prop <= 6e-04: n = 3424.19571232181
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6346239 
+|   |   |   |   |   |   |   |   |   |   [71] diff_obs_prop > 6e-04: n = 1966.74982475261
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6325962 
+|   |   |   |   |   |   |   |   [72] nMut in 1, 6, 7: n = 2384.18709981051
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6024799 
+|   |   |   |   |   |   |   [73] SSWM > 0.83634
+|   |   |   |   |   |   |   |   [74] epistRSign <= 0.00269
+|   |   |   |   |   |   |   |   |   [75] observedProp <= 0.0135: n = 2508.74663933716
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5887141 
+|   |   |   |   |   |   |   |   |   [76] observedProp > 0.0135
+|   |   |   |   |   |   |   |   |   |   [77] nMut in 2, 3, 5: n = 2332.94562253075
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.583143 
+|   |   |   |   |   |   |   |   |   |   [78] nMut in 1, 4, 6: n = 2025.08931052847
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5774226 
+|   |   |   |   |   |   |   |   [79] epistRSign > 0.00269: n = 2060.89625726069
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5681375 
+|   |   |   |   |   |   [80] epistRSign > 0.0053
+|   |   |   |   |   |   |   [81] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [82] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [83] SSWM <= 0.83291: n = 3689.55775113632
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6364187 
+|   |   |   |   |   |   |   |   |   [84] SSWM > 0.83291: n = 3958.92636513382
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6423857 
+|   |   |   |   |   |   |   |   [85] nMut in 4, 5: n = 3563.47513097111
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6497577 
+|   |   |   |   |   |   |   [86] nMut in 1, 6, 7: n = 3445.25044276284
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5984939 
+|   |   |   [87] nMut in 0, 8
+|   |   |   |   [88] gamma <= 0.38581
+|   |   |   |   |   [89] fitnessRank <= 52: n = 3965.94353070854
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3317792 
+|   |   |   |   |   [90] fitnessRank > 52
+|   |   |   |   |   |   [91] observedProp <= 0.16375
+|   |   |   |   |   |   |   [92] diff_obs_prop <= 0.00215: n = 3754.73008062618
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4421473 
+|   |   |   |   |   |   |   [93] diff_obs_prop > 0.00215: n = 1959.31550970363
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4376352 
+|   |   |   |   |   |   [94] observedProp > 0.16375
+|   |   |   |   |   |   |   [95] diff_obs_prop <= 0.00015: n = 2237.6253508044
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4312112 
+|   |   |   |   |   |   |   [96] diff_obs_prop > 0.00015: n = 2043.61850810597
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4356826 
+|   |   |   |   [97] gamma > 0.38581
+|   |   |   |   |   [98] fitnessRank <= 52: n = 8670.62967687601
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.4748407 
+|   |   |   |   |   [99] fitnessRank > 52
+|   |   |   |   |   |   [100] diff_obs_prop <= 5e-04: n = 2409.21930198283
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |          0.395255 
+|   |   |   |   |   |   [101] diff_obs_prop > 5e-04: n = 2012.37110213888
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3888284 
+|   |   [102] propLocalMax > 0.3321
+|   |   |   [103] fitnessRank <= 52
+|   |   |   |   [104] fitnessRank <= 5
+|   |   |   |   |   [105] propLocalMax <= 0.5541: n = 2001.86475607793
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2250701 
+|   |   |   |   |   [106] propLocalMax > 0.5541: n = 3696.7851083066
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.1488816 
+|   |   |   |   [107] fitnessRank > 5
+|   |   |   |   |   [108] propLocalMax <= 0.76055
+|   |   |   |   |   |   [109] SSWM <= 0.92418
+|   |   |   |   |   |   |   [110] propLocalMax <= 0.54785: n = 3509.3588794075
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4152947 
+|   |   |   |   |   |   |   [111] propLocalMax > 0.54785: n = 3614.21214842153
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.3456697 
+|   |   |   |   |   |   [112] SSWM > 0.92418: n = 2689.56315098522
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2625428 
+|   |   |   |   |   [113] propLocalMax > 0.76055
+|   |   |   |   |   |   [114] propLocalMax <= 0.9207: n = 2563.22183347163
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2675916 
+|   |   |   |   |   |   [115] propLocalMax > 0.9207: n = 3174.20029600089
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2131722 
+|   |   |   [116] fitnessRank > 52
+|   |   |   |   [117] propLocalMax <= 0.7767
+|   |   |   |   |   [118] SSWM <= 0.92464
+|   |   |   |   |   |   [119] nMut in 1, 5: n = 2279.52785380776
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5846039 
+|   |   |   |   |   |   [120] nMut in 2, 3, 4, 6: n = 3160.58634804255
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5001705 
+|   |   |   |   |   [121] SSWM > 0.92464: n = 2050.25732880869
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3424891 
+|   |   |   |   [122] propLocalMax > 0.7767: n = 2364.23506681694
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2924416 
+|   [123] nMut in 9: n = 9645.99952317848
+|       (Intercept) 
+|         0.1107746 
+
+Number of inner nodes:    61
+Number of terminal nodes: 62
+Number of parameters per node: 1
+Objective function (residual sum of squares): 115.3381
+
+     done
+Warning message:
+In rm(localdata) : object 'localdata' not found
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_allFL_Inf
+
+ nrow data set =  195825 
+
+    Using minsize =  1958 
+
+   sum of weights =  195825 
+    user   system  elapsed 
+4101.259 6877.433 2370.298 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + SSWM + gamma + epistRSign + numObservedPeaks + 
+    diff_obs_prop + observedProp + fitnessRank + propLocalMax + 
+    typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] nMut in 0, 1, 2, 3, 4, 5, 6, 7, 8
+|   |   [3] propLocalMax <= 0.3321
+|   |   |   [4] nMut in 1, 2, 3, 4, 5, 6, 7
+|   |   |   |   [5] fitnessRank <= 52
+|   |   |   |   |   [6] gamma <= 0.38581
+|   |   |   |   |   |   [7] nMut in 1: n = 2576.48007257595
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |          0.255994 
+|   |   |   |   |   |   [8] nMut in 2, 3, 4, 5, 6, 7
+|   |   |   |   |   |   |   [9] propLocalMax <= 0.02955
+|   |   |   |   |   |   |   |   [10] epistRSign <= 0.00061
+|   |   |   |   |   |   |   |   |   [11] nMut in 2, 3: n = 3871.42198704532
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3325759 
+|   |   |   |   |   |   |   |   |   [12] nMut in 4, 5, 6, 7
+|   |   |   |   |   |   |   |   |   |   [13] nMut in 4, 5: n = 4405.92304596064
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4356314 
+|   |   |   |   |   |   |   |   |   |   [14] nMut in 6, 7: n = 4550.64804379327
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4671078 
+|   |   |   |   |   |   |   |   [15] epistRSign > 0.00061
+|   |   |   |   |   |   |   |   |   [16] nMut in 2, 4, 5: n = 3653.63115688047
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5972791 
+|   |   |   |   |   |   |   |   |   [17] nMut in 3, 6, 7: n = 2027.70215374707
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5571897 
+|   |   |   |   |   |   |   [18] propLocalMax > 0.02955
+|   |   |   |   |   |   |   |   [19] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [20] nMut in 2: n = 2176.21060029972
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4462156 
+|   |   |   |   |   |   |   |   |   [21] nMut in 3: n = 2503.22021723245
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4161833 
+|   |   |   |   |   |   |   |   [22] nMut in 4, 5, 6, 7: n = 3485.49404901973
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.3575773 
+|   |   |   |   |   [23] gamma > 0.38581
+|   |   |   |   |   |   [24] propLocalMax <= 0.02975
+|   |   |   |   |   |   |   [25] epistRSign <= 0.00035
+|   |   |   |   |   |   |   |   [26] nMut in 5, 6
+|   |   |   |   |   |   |   |   |   [27] fitnessRank <= 30
+|   |   |   |   |   |   |   |   |   |   [28] diff_obs_prop <= 5e-05: n = 1959.81673581611
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.557841 
+|   |   |   |   |   |   |   |   |   |   [29] diff_obs_prop > 5e-05: n = 1971.46135020992
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5550798 
+|   |   |   |   |   |   |   |   |   [30] fitnessRank > 30: n = 3753.94105371363
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5867698 
+|   |   |   |   |   |   |   |   [31] nMut in 1, 2, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [32] nMut in 2, 3, 4: n = 3165.04887730206
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5521617 
+|   |   |   |   |   |   |   |   |   [33] nMut in 1, 7
+|   |   |   |   |   |   |   |   |   |   [34] diff_obs_prop <= -5e-04: n = 2747.07480524627
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5503524 
+|   |   |   |   |   |   |   |   |   |   [35] diff_obs_prop > -5e-04: n = 3971.73188387848
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5486843 
+|   |   |   |   |   |   |   [36] epistRSign > 0.00035
+|   |   |   |   |   |   |   |   [37] nMut in 2, 5, 6
+|   |   |   |   |   |   |   |   |   [38] nMut in 5: n = 3272.08490519302
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6152739 
+|   |   |   |   |   |   |   |   |   [39] nMut in 2, 6: n = 3927.80184040722
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6209515 
+|   |   |   |   |   |   |   |   [40] nMut in 1, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [41] nMut in 3, 4: n = 3870.516546326
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.579547 
+|   |   |   |   |   |   |   |   |   [42] nMut in 1, 7: n = 2437.59193366608
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5905709 
+|   |   |   |   |   |   [43] propLocalMax > 0.02975
+|   |   |   |   |   |   |   [44] nMut in 2, 3, 4, 5: n = 2874.30539489491
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4963057 
+|   |   |   |   |   |   |   [45] nMut in 6, 7: n = 2415.6835019754
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4176991 
+|   |   |   |   [46] fitnessRank > 52
+|   |   |   |   |   [47] gamma <= 0.30609
+|   |   |   |   |   |   [48] fitnessRank <= 160
+|   |   |   |   |   |   |   [49] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [50] SSWM <= 0.85146: n = 1958.90482766308
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.727228 
+|   |   |   |   |   |   |   |   [51] SSWM > 0.85146
+|   |   |   |   |   |   |   |   |   [52] nMut in 2: n = 2901.17758195757
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7084218 
+|   |   |   |   |   |   |   |   |   [53] nMut in 3, 4, 5: n = 2364.55843850241
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7020145 
+|   |   |   |   |   |   |   [54] nMut in 1, 6, 7
+|   |   |   |   |   |   |   |   [55] SSWM <= 0.85492: n = 2066.71694759917
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6873815 
+|   |   |   |   |   |   |   |   [56] SSWM > 0.85492: n = 3193.2145511066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6070929 
+|   |   |   |   |   |   [57] fitnessRank > 160
+|   |   |   |   |   |   |   [58] observedProp <= 0.17
+|   |   |   |   |   |   |   |   [59] nMut in 2: n = 2920.08189069021
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7867112 
+|   |   |   |   |   |   |   |   [60] nMut in 1, 3, 4, 5, 6, 7: n = 7210.32518360725
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7605083 
+|   |   |   |   |   |   |   [61] observedProp > 0.17
+|   |   |   |   |   |   |   |   [62] diff_obs_prop <= -0.00065: n = 2786.0378596287
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7320787 
+|   |   |   |   |   |   |   |   [63] diff_obs_prop > -0.00065: n = 3221.46753526621
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7301453 
+|   |   |   |   |   [64] gamma > 0.30609
+|   |   |   |   |   |   [65] epistRSign <= 0.0053
+|   |   |   |   |   |   |   [66] SSWM <= 0.83634
+|   |   |   |   |   |   |   |   [67] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   |   [68] nMut in 2: n = 2421.43951797679
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.636961 
+|   |   |   |   |   |   |   |   |   [69] nMut in 3, 4, 5
+|   |   |   |   |   |   |   |   |   |   [70] diff_obs_prop <= 6e-04: n = 3424.19571232181
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6346241 
+|   |   |   |   |   |   |   |   |   |   [71] diff_obs_prop > 6e-04: n = 1966.74982475261
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6325964 
+|   |   |   |   |   |   |   |   [72] nMut in 1, 6, 7: n = 2384.18709981051
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |           0.60248 
+|   |   |   |   |   |   |   [73] SSWM > 0.83634
+|   |   |   |   |   |   |   |   [74] epistRSign <= 0.00269
+|   |   |   |   |   |   |   |   |   [75] observedProp <= 0.0135: n = 2508.74663933716
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5887144 
+|   |   |   |   |   |   |   |   |   [76] observedProp > 0.0135
+|   |   |   |   |   |   |   |   |   |   [77] nMut in 2, 3, 5: n = 2332.94562253075
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5831432 
+|   |   |   |   |   |   |   |   |   |   [78] nMut in 1, 4, 6: n = 2025.08931052847
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5774229 
+|   |   |   |   |   |   |   |   [79] epistRSign > 0.00269: n = 2060.89625726069
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5681375 
+|   |   |   |   |   |   [80] epistRSign > 0.0053
+|   |   |   |   |   |   |   [81] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [82] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [83] SSWM <= 0.83291: n = 3689.55775113632
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6364185 
+|   |   |   |   |   |   |   |   |   [84] SSWM > 0.83291: n = 3958.92636513382
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6423857 
+|   |   |   |   |   |   |   |   [85] nMut in 4, 5: n = 3563.47513097111
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6497576 
+|   |   |   |   |   |   |   [86] nMut in 1, 6, 7: n = 3445.25044276284
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5984938 
+|   |   |   [87] nMut in 0, 8
+|   |   |   |   [88] gamma <= 0.38581
+|   |   |   |   |   [89] fitnessRank <= 52: n = 3965.94353070854
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3317791 
+|   |   |   |   |   [90] fitnessRank > 52
+|   |   |   |   |   |   [91] observedProp <= 0.16375
+|   |   |   |   |   |   |   [92] diff_obs_prop <= 0.00215: n = 3754.73008062618
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4421471 
+|   |   |   |   |   |   |   [93] diff_obs_prop > 0.00215: n = 1959.31550970363
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.437635 
+|   |   |   |   |   |   [94] observedProp > 0.16375
+|   |   |   |   |   |   |   [95] diff_obs_prop <= 0.00015: n = 2237.6253508044
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.431211 
+|   |   |   |   |   |   |   [96] diff_obs_prop > 0.00015: n = 2043.61850810597
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4356824 
+|   |   |   |   [97] gamma > 0.38581
+|   |   |   |   |   [98] fitnessRank <= 52: n = 8670.62967687601
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.4748409 
+|   |   |   |   |   [99] fitnessRank > 52
+|   |   |   |   |   |   [100] diff_obs_prop <= 5e-04: n = 2409.21930198283
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3952551 
+|   |   |   |   |   |   [101] diff_obs_prop > 5e-04: n = 2012.37110213888
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3888285 
+|   |   [102] propLocalMax > 0.3321
+|   |   |   [103] fitnessRank <= 52
+|   |   |   |   [104] fitnessRank <= 5
+|   |   |   |   |   [105] propLocalMax <= 0.5541: n = 2001.86475607793
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |           0.22507 
+|   |   |   |   |   [106] propLocalMax > 0.5541: n = 3696.7851083066
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.1488814 
+|   |   |   |   [107] fitnessRank > 5
+|   |   |   |   |   [108] propLocalMax <= 0.76055
+|   |   |   |   |   |   [109] SSWM <= 0.92418
+|   |   |   |   |   |   |   [110] propLocalMax <= 0.54785: n = 3509.3588794075
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4152945 
+|   |   |   |   |   |   |   [111] propLocalMax > 0.54785: n = 3614.21214842153
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.3456695 
+|   |   |   |   |   |   [112] SSWM > 0.92418: n = 2689.56315098522
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2625428 
+|   |   |   |   |   [113] propLocalMax > 0.76055
+|   |   |   |   |   |   [114] propLocalMax <= 0.9207: n = 2563.22183347163
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2675915 
+|   |   |   |   |   |   [115] propLocalMax > 0.9207: n = 3174.20029600089
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2131719 
+|   |   |   [116] fitnessRank > 52
+|   |   |   |   [117] propLocalMax <= 0.7767
+|   |   |   |   |   [118] SSWM <= 0.92464
+|   |   |   |   |   |   [119] nMut in 1, 5: n = 2279.52785380776
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5846037 
+|   |   |   |   |   |   [120] nMut in 2, 3, 4, 6: n = 3160.58634804255
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5001704 
+|   |   |   |   |   [121] SSWM > 0.92464: n = 2050.25732880869
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.342489 
+|   |   |   |   [122] propLocalMax > 0.7767: n = 2364.23506681694
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2924413 
+|   [123] nMut in 9: n = 9645.99952317848
+|       (Intercept) 
+|         0.1107747 
+
+Number of inner nodes:    61
+Number of terminal nodes: 62
+Number of parameters per node: 1
+Objective function (residual sum of squares): 115.3381
+
+     done
+Warning message:
+In rm(localdata) : object 'localdata' not found
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_default_allFL_Inf
+
+ nrow data set =  195825 
+
+    Using minsize =  1958 
+
+   sum of weights =  195825 
+    user   system  elapsed 
+3773.841 7083.384 2052.947 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + SSWM + gamma + epistRSign + numObservedPeaks + 
+    diff_obs_prop + observedProp + fitnessRank + propLocalMax + 
+    typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] nMut in 0, 1, 2, 3, 4, 5, 6, 7, 8
+|   |   [3] propLocalMax <= 0.3321
+|   |   |   [4] nMut in 1, 2, 3, 4, 5, 6, 7
+|   |   |   |   [5] fitnessRank <= 52
+|   |   |   |   |   [6] gamma <= 0.38581
+|   |   |   |   |   |   [7] nMut in 1: n = 2576.48007257595
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2559936 
+|   |   |   |   |   |   [8] nMut in 2, 3, 4, 5, 6, 7
+|   |   |   |   |   |   |   [9] propLocalMax <= 0.02955
+|   |   |   |   |   |   |   |   [10] epistRSign <= 0.00061
+|   |   |   |   |   |   |   |   |   [11] nMut in 2, 3: n = 3871.42198704532
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3325757 
+|   |   |   |   |   |   |   |   |   [12] nMut in 4, 5, 6, 7
+|   |   |   |   |   |   |   |   |   |   [13] nMut in 4, 5: n = 4405.92304596064
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4356311 
+|   |   |   |   |   |   |   |   |   |   [14] nMut in 6, 7: n = 4550.64804379327
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4671076 
+|   |   |   |   |   |   |   |   [15] epistRSign > 0.00061
+|   |   |   |   |   |   |   |   |   [16] nMut in 2, 4, 5: n = 3653.63115688047
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5972805 
+|   |   |   |   |   |   |   |   |   [17] nMut in 3, 6, 7: n = 2027.70215374707
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5571911 
+|   |   |   |   |   |   |   [18] propLocalMax > 0.02955
+|   |   |   |   |   |   |   |   [19] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [20] nMut in 2: n = 2176.21060029972
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4462171 
+|   |   |   |   |   |   |   |   |   [21] nMut in 3: n = 2503.22021723245
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4161847 
+|   |   |   |   |   |   |   |   [22] nMut in 4, 5, 6, 7: n = 3485.49404901973
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.3575787 
+|   |   |   |   |   [23] gamma > 0.38581
+|   |   |   |   |   |   [24] propLocalMax <= 0.02975
+|   |   |   |   |   |   |   [25] epistRSign <= 0.00035
+|   |   |   |   |   |   |   |   [26] nMut in 5, 6
+|   |   |   |   |   |   |   |   |   [27] fitnessRank <= 30
+|   |   |   |   |   |   |   |   |   |   [28] diff_obs_prop <= 5e-05: n = 1959.81673581611
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5578388 
+|   |   |   |   |   |   |   |   |   |   [29] diff_obs_prop > 5e-05: n = 1971.46135020992
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5550776 
+|   |   |   |   |   |   |   |   |   [30] fitnessRank > 30: n = 3753.94105371363
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5867679 
+|   |   |   |   |   |   |   |   [31] nMut in 1, 2, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [32] nMut in 2, 3, 4: n = 3165.04887730206
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5521593 
+|   |   |   |   |   |   |   |   |   [33] nMut in 1, 7
+|   |   |   |   |   |   |   |   |   |   [34] diff_obs_prop <= -5e-04: n = 2747.07480524627
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5503506 
+|   |   |   |   |   |   |   |   |   |   [35] diff_obs_prop > -5e-04: n = 3971.73188387848
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5486825 
+|   |   |   |   |   |   |   [36] epistRSign > 0.00035
+|   |   |   |   |   |   |   |   [37] nMut in 2, 5, 6
+|   |   |   |   |   |   |   |   |   [38] nMut in 5: n = 3272.08490519302
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6152742 
+|   |   |   |   |   |   |   |   |   [39] nMut in 2, 6: n = 3927.80184040722
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6209518 
+|   |   |   |   |   |   |   |   [40] nMut in 1, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [41] nMut in 3, 4: n = 3870.516546326
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5795468 
+|   |   |   |   |   |   |   |   |   [42] nMut in 1, 7: n = 2437.59193366608
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5905713 
+|   |   |   |   |   |   [43] propLocalMax > 0.02975
+|   |   |   |   |   |   |   [44] nMut in 2, 3, 4, 5: n = 2874.30539489491
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4963058 
+|   |   |   |   |   |   |   [45] nMut in 6, 7: n = 2415.6835019754
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4176995 
+|   |   |   |   [46] fitnessRank > 52
+|   |   |   |   |   [47] gamma <= 0.30609
+|   |   |   |   |   |   [48] fitnessRank <= 160
+|   |   |   |   |   |   |   [49] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [50] SSWM <= 0.85146: n = 1958.90482766308
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7272296 
+|   |   |   |   |   |   |   |   [51] SSWM > 0.85146
+|   |   |   |   |   |   |   |   |   [52] nMut in 2: n = 2901.17758195757
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7084232 
+|   |   |   |   |   |   |   |   |   [53] nMut in 3, 4, 5: n = 2364.55843850241
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7020159 
+|   |   |   |   |   |   |   [54] nMut in 1, 6, 7
+|   |   |   |   |   |   |   |   [55] SSWM <= 0.85492: n = 2066.71694759917
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6873833 
+|   |   |   |   |   |   |   |   [56] SSWM > 0.85492: n = 3193.2145511066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6070942 
+|   |   |   |   |   |   [57] fitnessRank > 160
+|   |   |   |   |   |   |   [58] observedProp <= 0.17
+|   |   |   |   |   |   |   |   [59] nMut in 2: n = 2920.08189069021
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7867125 
+|   |   |   |   |   |   |   |   [60] nMut in 1, 3, 4, 5, 6, 7: n = 7210.32518360725
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7605097 
+|   |   |   |   |   |   |   [61] observedProp > 0.17
+|   |   |   |   |   |   |   |   [62] diff_obs_prop <= -0.00065: n = 2786.0378596287
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7320802 
+|   |   |   |   |   |   |   |   [63] diff_obs_prop > -0.00065: n = 3221.46753526621
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7301467 
+|   |   |   |   |   [64] gamma > 0.30609
+|   |   |   |   |   |   [65] epistRSign <= 0.0053
+|   |   |   |   |   |   |   [66] SSWM <= 0.83634
+|   |   |   |   |   |   |   |   [67] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   |   [68] nMut in 2: n = 2421.43951797679
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6369597 
+|   |   |   |   |   |   |   |   |   [69] nMut in 3, 4, 5
+|   |   |   |   |   |   |   |   |   |   [70] diff_obs_prop <= 6e-04: n = 3424.19571232181
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6346228 
+|   |   |   |   |   |   |   |   |   |   [71] diff_obs_prop > 6e-04: n = 1966.74982475261
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6325951 
+|   |   |   |   |   |   |   |   [72] nMut in 1, 6, 7: n = 2384.18709981051
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6024788 
+|   |   |   |   |   |   |   [73] SSWM > 0.83634
+|   |   |   |   |   |   |   |   [74] epistRSign <= 0.00269
+|   |   |   |   |   |   |   |   |   [75] observedProp <= 0.0135: n = 2508.74663933716
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5887123 
+|   |   |   |   |   |   |   |   |   [76] observedProp > 0.0135
+|   |   |   |   |   |   |   |   |   |   [77] nMut in 2, 3, 5: n = 2332.94562253075
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5831413 
+|   |   |   |   |   |   |   |   |   |   [78] nMut in 1, 4, 6: n = 2025.08931052847
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5774209 
+|   |   |   |   |   |   |   |   [79] epistRSign > 0.00269: n = 2060.89625726069
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5681375 
+|   |   |   |   |   |   [80] epistRSign > 0.0053
+|   |   |   |   |   |   |   [81] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [82] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [83] SSWM <= 0.83291: n = 3689.55775113632
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6364197 
+|   |   |   |   |   |   |   |   |   [84] SSWM > 0.83291: n = 3958.92636513382
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6423862 
+|   |   |   |   |   |   |   |   [85] nMut in 4, 5: n = 3563.47513097111
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6497583 
+|   |   |   |   |   |   |   [86] nMut in 1, 6, 7: n = 3445.25044276284
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5984945 
+|   |   |   [87] nMut in 0, 8
+|   |   |   |   [88] gamma <= 0.38581
+|   |   |   |   |   [89] fitnessRank <= 52: n = 3965.94353070854
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3317794 
+|   |   |   |   |   [90] fitnessRank > 52
+|   |   |   |   |   |   [91] observedProp <= 0.16375
+|   |   |   |   |   |   |   [92] diff_obs_prop <= 0.00215: n = 3754.73008062618
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4421485 
+|   |   |   |   |   |   |   [93] diff_obs_prop > 0.00215: n = 1959.31550970363
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4376364 
+|   |   |   |   |   |   [94] observedProp > 0.16375
+|   |   |   |   |   |   |   [95] diff_obs_prop <= 0.00015: n = 2237.6253508044
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4312124 
+|   |   |   |   |   |   |   [96] diff_obs_prop > 0.00015: n = 2043.61850810597
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4356837 
+|   |   |   |   [97] gamma > 0.38581
+|   |   |   |   |   [98] fitnessRank <= 52: n = 8670.62967687601
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.4748398 
+|   |   |   |   |   [99] fitnessRank > 52
+|   |   |   |   |   |   [100] diff_obs_prop <= 5e-04: n = 2409.21930198283
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3952545 
+|   |   |   |   |   |   [101] diff_obs_prop > 5e-04: n = 2012.37110213888
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3888279 
+|   |   [102] propLocalMax > 0.3321
+|   |   |   [103] fitnessRank <= 52
+|   |   |   |   [104] fitnessRank <= 5
+|   |   |   |   |   [105] propLocalMax <= 0.5541: n = 2001.86475607793
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2250709 
+|   |   |   |   |   [106] propLocalMax > 0.5541: n = 3696.7851083066
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.1488822 
+|   |   |   |   [107] fitnessRank > 5
+|   |   |   |   |   [108] propLocalMax <= 0.76055
+|   |   |   |   |   |   [109] SSWM <= 0.92418
+|   |   |   |   |   |   |   [110] propLocalMax <= 0.54785: n = 3509.3588794075
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4152954 
+|   |   |   |   |   |   |   [111] propLocalMax > 0.54785: n = 3614.21214842153
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.3456704 
+|   |   |   |   |   |   [112] SSWM > 0.92418: n = 2689.56315098522
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2625428 
+|   |   |   |   |   [113] propLocalMax > 0.76055
+|   |   |   |   |   |   [114] propLocalMax <= 0.9207: n = 2563.22183347163
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |          0.267592 
+|   |   |   |   |   |   [115] propLocalMax > 0.9207: n = 3174.20029600089
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2131735 
+|   |   |   [116] fitnessRank > 52
+|   |   |   |   [117] propLocalMax <= 0.7767
+|   |   |   |   |   [118] SSWM <= 0.92464
+|   |   |   |   |   |   [119] nMut in 1, 5: n = 2279.52785380776
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5846051 
+|   |   |   |   |   |   [120] nMut in 2, 3, 4, 6: n = 3160.58634804255
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5001715 
+|   |   |   |   |   [121] SSWM > 0.92464: n = 2050.25732880869
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3424898 
+|   |   |   |   [122] propLocalMax > 0.7767: n = 2364.23506681694
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2924432 
+|   [123] nMut in 9: n = 9645.99952317848
+|       (Intercept) 
+|         0.1107738 
+
+Number of inner nodes:    61
+Number of terminal nodes: 62
+Number of parameters per node: 1
+Objective function (residual sum of squares): 115.338
+
+     done
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00236461 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0101741 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00816796 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00236461 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0101741 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00816796 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NLM_allFL_Inf
+
+ nrow data set =  195825 
+
+    Using minsize =  1958 
+
+   sum of weights =  195825 
+    user   system  elapsed 
+4135.439 7651.659 2540.769 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + SSWM + gamma + epistRSign + numObservedPeaks + 
+    diff_obs_prop + observedProp + fitnessRank + propLocalMax + 
+    typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] nMut in 0, 1, 2, 3, 4, 5, 6, 7, 8
+|   |   [3] propLocalMax <= 0.3321
+|   |   |   [4] nMut in 1, 2, 3, 4, 5, 6, 7
+|   |   |   |   [5] fitnessRank <= 52
+|   |   |   |   |   [6] gamma <= 0.38581
+|   |   |   |   |   |   [7] nMut in 1: n = 2576.48007257595
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |          0.255994 
+|   |   |   |   |   |   [8] nMut in 2, 3, 4, 5, 6, 7
+|   |   |   |   |   |   |   [9] propLocalMax <= 0.02955
+|   |   |   |   |   |   |   |   [10] epistRSign <= 0.00061
+|   |   |   |   |   |   |   |   |   [11] nMut in 2, 3: n = 3871.42198704532
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.332576 
+|   |   |   |   |   |   |   |   |   [12] nMut in 4, 5, 6, 7
+|   |   |   |   |   |   |   |   |   |   [13] nMut in 4, 5: n = 4405.92304596064
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4356314 
+|   |   |   |   |   |   |   |   |   |   [14] nMut in 6, 7: n = 4550.64804379327
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4671078 
+|   |   |   |   |   |   |   |   [15] epistRSign > 0.00061
+|   |   |   |   |   |   |   |   |   [16] nMut in 2, 4, 5: n = 3653.63115688047
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.597279 
+|   |   |   |   |   |   |   |   |   [17] nMut in 3, 6, 7: n = 2027.70215374707
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5571896 
+|   |   |   |   |   |   |   [18] propLocalMax > 0.02955
+|   |   |   |   |   |   |   |   [19] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [20] nMut in 2: n = 2176.21060029972
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4462155 
+|   |   |   |   |   |   |   |   |   [21] nMut in 3: n = 2503.22021723245
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4161832 
+|   |   |   |   |   |   |   |   [22] nMut in 4, 5, 6, 7: n = 3485.49404901973
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.3575772 
+|   |   |   |   |   [23] gamma > 0.38581
+|   |   |   |   |   |   [24] propLocalMax <= 0.02975
+|   |   |   |   |   |   |   [25] epistRSign <= 0.00035
+|   |   |   |   |   |   |   |   [26] nMut in 5, 6
+|   |   |   |   |   |   |   |   |   [27] fitnessRank <= 30
+|   |   |   |   |   |   |   |   |   |   [28] diff_obs_prop <= 5e-05: n = 1959.81673581611
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5578411 
+|   |   |   |   |   |   |   |   |   |   [29] diff_obs_prop > 5e-05: n = 1971.46135020992
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |           0.55508 
+|   |   |   |   |   |   |   |   |   [30] fitnessRank > 30: n = 3753.94105371363
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5867699 
+|   |   |   |   |   |   |   |   [31] nMut in 1, 2, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [32] nMut in 2, 3, 4: n = 3165.04887730206
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5521619 
+|   |   |   |   |   |   |   |   |   [33] nMut in 1, 7
+|   |   |   |   |   |   |   |   |   |   [34] diff_obs_prop <= -5e-04: n = 2747.07480524627
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5503526 
+|   |   |   |   |   |   |   |   |   |   [35] diff_obs_prop > -5e-04: n = 3971.73188387848
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5486845 
+|   |   |   |   |   |   |   [36] epistRSign > 0.00035
+|   |   |   |   |   |   |   |   [37] nMut in 2, 5, 6
+|   |   |   |   |   |   |   |   |   [38] nMut in 5: n = 3272.08490519302
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6152739 
+|   |   |   |   |   |   |   |   |   [39] nMut in 2, 6: n = 3927.80184040722
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6209515 
+|   |   |   |   |   |   |   |   [40] nMut in 1, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [41] nMut in 3, 4: n = 3870.516546326
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.579547 
+|   |   |   |   |   |   |   |   |   [42] nMut in 1, 7: n = 2437.59193366608
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5905709 
+|   |   |   |   |   |   [43] propLocalMax > 0.02975
+|   |   |   |   |   |   |   [44] nMut in 2, 3, 4, 5: n = 2874.30539489491
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4963057 
+|   |   |   |   |   |   |   [45] nMut in 6, 7: n = 2415.6835019754
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.417699 
+|   |   |   |   [46] fitnessRank > 52
+|   |   |   |   |   [47] gamma <= 0.30609
+|   |   |   |   |   |   [48] fitnessRank <= 160
+|   |   |   |   |   |   |   [49] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [50] SSWM <= 0.85146: n = 1958.90482766308
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7272279 
+|   |   |   |   |   |   |   |   [51] SSWM > 0.85146
+|   |   |   |   |   |   |   |   |   [52] nMut in 2: n = 2901.17758195757
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7084218 
+|   |   |   |   |   |   |   |   |   [53] nMut in 3, 4, 5: n = 2364.55843850241
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7020145 
+|   |   |   |   |   |   |   [54] nMut in 1, 6, 7
+|   |   |   |   |   |   |   |   [55] SSWM <= 0.85492: n = 2066.71694759917
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6873813 
+|   |   |   |   |   |   |   |   [56] SSWM > 0.85492: n = 3193.2145511066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6070928 
+|   |   |   |   |   |   [57] fitnessRank > 160
+|   |   |   |   |   |   |   [58] observedProp <= 0.17
+|   |   |   |   |   |   |   |   [59] nMut in 2: n = 2920.08189069021
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7867111 
+|   |   |   |   |   |   |   |   [60] nMut in 1, 3, 4, 5, 6, 7: n = 7210.32518360725
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7605082 
+|   |   |   |   |   |   |   [61] observedProp > 0.17
+|   |   |   |   |   |   |   |   [62] diff_obs_prop <= -0.00065: n = 2786.0378596287
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7320787 
+|   |   |   |   |   |   |   |   [63] diff_obs_prop > -0.00065: n = 3221.46753526621
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7301452 
+|   |   |   |   |   [64] gamma > 0.30609
+|   |   |   |   |   |   [65] epistRSign <= 0.0053
+|   |   |   |   |   |   |   [66] SSWM <= 0.83634
+|   |   |   |   |   |   |   |   [67] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   |   [68] nMut in 2: n = 2421.43951797679
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6369611 
+|   |   |   |   |   |   |   |   |   [69] nMut in 3, 4, 5
+|   |   |   |   |   |   |   |   |   |   [70] diff_obs_prop <= 6e-04: n = 3424.19571232181
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6346242 
+|   |   |   |   |   |   |   |   |   |   [71] diff_obs_prop > 6e-04: n = 1966.74982475261
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6325966 
+|   |   |   |   |   |   |   |   [72] nMut in 1, 6, 7: n = 2384.18709981051
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6024801 
+|   |   |   |   |   |   |   [73] SSWM > 0.83634
+|   |   |   |   |   |   |   |   [74] epistRSign <= 0.00269
+|   |   |   |   |   |   |   |   |   [75] observedProp <= 0.0135: n = 2508.74663933716
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5887145 
+|   |   |   |   |   |   |   |   |   [76] observedProp > 0.0135
+|   |   |   |   |   |   |   |   |   |   [77] nMut in 2, 3, 5: n = 2332.94562253075
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5831434 
+|   |   |   |   |   |   |   |   |   |   [78] nMut in 1, 4, 6: n = 2025.08931052847
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5774231 
+|   |   |   |   |   |   |   |   [79] epistRSign > 0.00269: n = 2060.89625726069
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5681375 
+|   |   |   |   |   |   [80] epistRSign > 0.0053
+|   |   |   |   |   |   |   [81] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [82] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [83] SSWM <= 0.83291: n = 3689.55775113632
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6364185 
+|   |   |   |   |   |   |   |   |   [84] SSWM > 0.83291: n = 3958.92636513382
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6423856 
+|   |   |   |   |   |   |   |   [85] nMut in 4, 5: n = 3563.47513097111
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6497575 
+|   |   |   |   |   |   |   [86] nMut in 1, 6, 7: n = 3445.25044276284
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5984938 
+|   |   |   [87] nMut in 0, 8
+|   |   |   |   [88] gamma <= 0.38581
+|   |   |   |   |   [89] fitnessRank <= 52: n = 3965.94353070854
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3317791 
+|   |   |   |   |   [90] fitnessRank > 52
+|   |   |   |   |   |   [91] observedProp <= 0.16375
+|   |   |   |   |   |   |   [92] diff_obs_prop <= 0.00215: n = 3754.73008062618
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.442147 
+|   |   |   |   |   |   |   [93] diff_obs_prop > 0.00215: n = 1959.31550970363
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4376349 
+|   |   |   |   |   |   [94] observedProp > 0.16375
+|   |   |   |   |   |   |   [95] diff_obs_prop <= 0.00015: n = 2237.6253508044
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4312109 
+|   |   |   |   |   |   |   [96] diff_obs_prop > 0.00015: n = 2043.61850810597
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4356823 
+|   |   |   |   [97] gamma > 0.38581
+|   |   |   |   |   [98] fitnessRank <= 52: n = 8670.62967687601
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.474841 
+|   |   |   |   |   [99] fitnessRank > 52
+|   |   |   |   |   |   [100] diff_obs_prop <= 5e-04: n = 2409.21930198283
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3952552 
+|   |   |   |   |   |   [101] diff_obs_prop > 5e-04: n = 2012.37110213888
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3888285 
+|   |   [102] propLocalMax > 0.3321
+|   |   |   [103] fitnessRank <= 52
+|   |   |   |   [104] fitnessRank <= 5
+|   |   |   |   |   [105] propLocalMax <= 0.5541: n = 2001.86475607793
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2250699 
+|   |   |   |   |   [106] propLocalMax > 0.5541: n = 3696.7851083066
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.1488814 
+|   |   |   |   [107] fitnessRank > 5
+|   |   |   |   |   [108] propLocalMax <= 0.76055
+|   |   |   |   |   |   [109] SSWM <= 0.92418
+|   |   |   |   |   |   |   [110] propLocalMax <= 0.54785: n = 3509.3588794075
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4152945 
+|   |   |   |   |   |   |   [111] propLocalMax > 0.54785: n = 3614.21214842153
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.3456695 
+|   |   |   |   |   |   [112] SSWM > 0.92418: n = 2689.56315098522
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2625428 
+|   |   |   |   |   [113] propLocalMax > 0.76055
+|   |   |   |   |   |   [114] propLocalMax <= 0.9207: n = 2563.22183347163
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2675914 
+|   |   |   |   |   |   [115] propLocalMax > 0.9207: n = 3174.20029600089
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2131718 
+|   |   |   [116] fitnessRank > 52
+|   |   |   |   [117] propLocalMax <= 0.7767
+|   |   |   |   |   [118] SSWM <= 0.92464
+|   |   |   |   |   |   [119] nMut in 1, 5: n = 2279.52785380776
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5846036 
+|   |   |   |   |   |   [120] nMut in 2, 3, 4, 6: n = 3160.58634804255
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5001703 
+|   |   |   |   |   [121] SSWM > 0.92464: n = 2050.25732880869
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3424889 
+|   |   |   |   [122] propLocalMax > 0.7767: n = 2364.23506681694
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2924411 
+|   [123] nMut in 9: n = 9645.99952317848
+|       (Intercept) 
+|         0.1107748 
+
+Number of inner nodes:    61
+Number of terminal nodes: 62
+Number of parameters per node: 1
+Objective function (residual sum of squares): 115.3381
+
+     done
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00236461 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0101741 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00816796 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00206346 (tol = 0.002, component 1)
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_LBF_allFL_Inf
+
+ nrow data set =  195825 
+
+    Using minsize =  1958 
+
+   sum of weights =  195825 
+    user   system  elapsed 
+4053.824 8212.646 2569.960 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + SSWM + gamma + epistRSign + numObservedPeaks + 
+    diff_obs_prop + observedProp + fitnessRank + propLocalMax + 
+    typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] nMut in 0, 1, 2, 3, 4, 5, 6, 7, 8
+|   |   [3] propLocalMax <= 0.3321
+|   |   |   [4] nMut in 1, 2, 3, 4, 5, 6, 7
+|   |   |   |   [5] fitnessRank <= 52
+|   |   |   |   |   [6] gamma <= 0.38581
+|   |   |   |   |   |   [7] nMut in 1: n = 2576.48007257595
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2559962 
+|   |   |   |   |   |   [8] nMut in 2, 3, 4, 5, 6, 7
+|   |   |   |   |   |   |   [9] propLocalMax <= 0.02955
+|   |   |   |   |   |   |   |   [10] epistRSign <= 0.00061
+|   |   |   |   |   |   |   |   |   [11] nMut in 2, 3: n = 3871.42198704532
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3325776 
+|   |   |   |   |   |   |   |   |   [12] nMut in 4, 5, 6, 7
+|   |   |   |   |   |   |   |   |   |   [13] nMut in 4, 5: n = 4405.92304596064
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4356333 
+|   |   |   |   |   |   |   |   |   |   [14] nMut in 6, 7: n = 4550.64804379327
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4671094 
+|   |   |   |   |   |   |   |   [15] epistRSign > 0.00061
+|   |   |   |   |   |   |   |   |   [16] nMut in 2, 4, 5: n = 3653.63115688047
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5972719 
+|   |   |   |   |   |   |   |   |   [17] nMut in 3, 6, 7: n = 2027.70215374707
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5571823 
+|   |   |   |   |   |   |   [18] propLocalMax > 0.02955
+|   |   |   |   |   |   |   |   [19] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [20] nMut in 2: n = 2176.21060029972
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4462076 
+|   |   |   |   |   |   |   |   |   [21] nMut in 3: n = 2503.22021723245
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4161758 
+|   |   |   |   |   |   |   |   [22] nMut in 4, 5, 6, 7: n = 3485.49404901973
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.3575697 
+|   |   |   |   |   [23] gamma > 0.38581
+|   |   |   |   |   |   [24] propLocalMax <= 0.02975
+|   |   |   |   |   |   |   [25] epistRSign <= 0.00035
+|   |   |   |   |   |   |   |   [26] nMut in 5, 6
+|   |   |   |   |   |   |   |   |   [27] fitnessRank <= 30
+|   |   |   |   |   |   |   |   |   |   [28] diff_obs_prop <= 5e-05: n = 1959.81673581611
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5578537 
+|   |   |   |   |   |   |   |   |   |   [29] diff_obs_prop > 5e-05: n = 1971.46135020992
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5550926 
+|   |   |   |   |   |   |   |   |   [30] fitnessRank > 30: n = 3753.94105371363
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5867804 
+|   |   |   |   |   |   |   |   [31] nMut in 1, 2, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [32] nMut in 2, 3, 4: n = 3165.04887730206
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5521756 
+|   |   |   |   |   |   |   |   |   [33] nMut in 1, 7
+|   |   |   |   |   |   |   |   |   |   [34] diff_obs_prop <= -5e-04: n = 2747.07480524627
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5503632 
+|   |   |   |   |   |   |   |   |   |   [35] diff_obs_prop > -5e-04: n = 3971.73188387848
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.548695 
+|   |   |   |   |   |   |   [36] epistRSign > 0.00035
+|   |   |   |   |   |   |   |   [37] nMut in 2, 5, 6
+|   |   |   |   |   |   |   |   |   [38] nMut in 5: n = 3272.08490519302
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6152727 
+|   |   |   |   |   |   |   |   |   [39] nMut in 2, 6: n = 3927.80184040722
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6209505 
+|   |   |   |   |   |   |   |   [40] nMut in 1, 3, 4, 7
+|   |   |   |   |   |   |   |   |   [41] nMut in 3, 4: n = 3870.516546326
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5795485 
+|   |   |   |   |   |   |   |   |   [42] nMut in 1, 7: n = 2437.59193366608
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5905694 
+|   |   |   |   |   |   [43] propLocalMax > 0.02975
+|   |   |   |   |   |   |   [44] nMut in 2, 3, 4, 5: n = 2874.30539489491
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.496305 
+|   |   |   |   |   |   |   [45] nMut in 6, 7: n = 2415.6835019754
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4176967 
+|   |   |   |   [46] fitnessRank > 52
+|   |   |   |   |   [47] gamma <= 0.30609
+|   |   |   |   |   |   [48] fitnessRank <= 160
+|   |   |   |   |   |   |   [49] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [50] SSWM <= 0.85146: n = 1958.90482766308
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |           0.72722 
+|   |   |   |   |   |   |   |   [51] SSWM > 0.85146
+|   |   |   |   |   |   |   |   |   [52] nMut in 2: n = 2901.17758195757
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7084148 
+|   |   |   |   |   |   |   |   |   [53] nMut in 3, 4, 5: n = 2364.55843850241
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7020079 
+|   |   |   |   |   |   |   [54] nMut in 1, 6, 7
+|   |   |   |   |   |   |   |   [55] SSWM <= 0.85492: n = 2066.71694759917
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6873713 
+|   |   |   |   |   |   |   |   [56] SSWM > 0.85492: n = 3193.2145511066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6070857 
+|   |   |   |   |   |   [57] fitnessRank > 160
+|   |   |   |   |   |   |   [58] observedProp <= 0.17
+|   |   |   |   |   |   |   |   [59] nMut in 2: n = 2920.08189069021
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7867042 
+|   |   |   |   |   |   |   |   [60] nMut in 1, 3, 4, 5, 6, 7: n = 7210.32518360725
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7605016 
+|   |   |   |   |   |   |   [61] observedProp > 0.17
+|   |   |   |   |   |   |   |   [62] diff_obs_prop <= -0.00065: n = 2786.0378596287
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7320721 
+|   |   |   |   |   |   |   |   [63] diff_obs_prop > -0.00065: n = 3221.46753526621
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7301386 
+|   |   |   |   |   [64] gamma > 0.30609
+|   |   |   |   |   |   [65] epistRSign <= 0.0053
+|   |   |   |   |   |   |   [66] SSWM <= 0.83634
+|   |   |   |   |   |   |   |   [67] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   |   [68] nMut in 2: n = 2421.43951797679
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6369685 
+|   |   |   |   |   |   |   |   |   [69] nMut in 3, 4, 5
+|   |   |   |   |   |   |   |   |   |   [70] diff_obs_prop <= 6e-04: n = 3424.19571232181
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6346319 
+|   |   |   |   |   |   |   |   |   |   [71] diff_obs_prop > 6e-04: n = 1966.74982475261
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6326042 
+|   |   |   |   |   |   |   |   [72] nMut in 1, 6, 7: n = 2384.18709981051
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6024874 
+|   |   |   |   |   |   |   [73] SSWM > 0.83634
+|   |   |   |   |   |   |   |   [74] epistRSign <= 0.00269
+|   |   |   |   |   |   |   |   |   [75] observedProp <= 0.0135: n = 2508.74663933716
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5887264 
+|   |   |   |   |   |   |   |   |   [76] observedProp > 0.0135
+|   |   |   |   |   |   |   |   |   |   [77] nMut in 2, 3, 5: n = 2332.94562253075
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5831554 
+|   |   |   |   |   |   |   |   |   |   [78] nMut in 1, 4, 6: n = 2025.08931052847
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.5774352 
+|   |   |   |   |   |   |   |   [79] epistRSign > 0.00269: n = 2060.89625726069
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5681385 
+|   |   |   |   |   |   [80] epistRSign > 0.0053
+|   |   |   |   |   |   |   [81] nMut in 2, 3, 4, 5
+|   |   |   |   |   |   |   |   [82] nMut in 2, 3
+|   |   |   |   |   |   |   |   |   [83] SSWM <= 0.83291: n = 3689.55775113632
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6364127 
+|   |   |   |   |   |   |   |   |   [84] SSWM > 0.83291: n = 3958.92636513382
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6423835 
+|   |   |   |   |   |   |   |   [85] nMut in 4, 5: n = 3563.47513097111
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6497543 
+|   |   |   |   |   |   |   [86] nMut in 1, 6, 7: n = 3445.25044276284
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5984907 
+|   |   |   [87] nMut in 0, 8
+|   |   |   |   [88] gamma <= 0.38581
+|   |   |   |   |   [89] fitnessRank <= 52: n = 3965.94353070854
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3317784 
+|   |   |   |   |   [90] fitnessRank > 52
+|   |   |   |   |   |   [91] observedProp <= 0.16375
+|   |   |   |   |   |   |   [92] diff_obs_prop <= 0.00215: n = 3754.73008062618
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4421394 
+|   |   |   |   |   |   |   [93] diff_obs_prop > 0.00215: n = 1959.31550970363
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4376273 
+|   |   |   |   |   |   [94] observedProp > 0.16375
+|   |   |   |   |   |   |   [95] diff_obs_prop <= 0.00015: n = 2237.6253508044
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4312033 
+|   |   |   |   |   |   |   [96] diff_obs_prop > 0.00015: n = 2043.61850810597
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4356747 
+|   |   |   |   [97] gamma > 0.38581
+|   |   |   |   |   [98] fitnessRank <= 52: n = 8670.62967687601
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.4748474 
+|   |   |   |   |   [99] fitnessRank > 52
+|   |   |   |   |   |   [100] diff_obs_prop <= 5e-04: n = 2409.21930198283
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3952587 
+|   |   |   |   |   |   [101] diff_obs_prop > 5e-04: n = 2012.37110213888
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.3888321 
+|   |   [102] propLocalMax > 0.3321
+|   |   |   [103] fitnessRank <= 52
+|   |   |   |   [104] fitnessRank <= 5
+|   |   |   |   |   [105] propLocalMax <= 0.5541: n = 2001.86475607793
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2250647 
+|   |   |   |   |   [106] propLocalMax > 0.5541: n = 3696.7851083066
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.1488771 
+|   |   |   |   [107] fitnessRank > 5
+|   |   |   |   |   [108] propLocalMax <= 0.76055
+|   |   |   |   |   |   [109] SSWM <= 0.92418
+|   |   |   |   |   |   |   [110] propLocalMax <= 0.54785: n = 3509.3588794075
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.4152894 
+|   |   |   |   |   |   |   [111] propLocalMax > 0.54785: n = 3614.21214842153
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.3456648 
+|   |   |   |   |   |   [112] SSWM > 0.92418: n = 2689.56315098522
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2625428 
+|   |   |   |   |   [113] propLocalMax > 0.76055
+|   |   |   |   |   |   [114] propLocalMax <= 0.9207: n = 2563.22183347163
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2675879 
+|   |   |   |   |   |   [115] propLocalMax > 0.9207: n = 3174.20029600089
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.2131619 
+|   |   |   [116] fitnessRank > 52
+|   |   |   |   [117] propLocalMax <= 0.7767
+|   |   |   |   |   [118] SSWM <= 0.92464
+|   |   |   |   |   |   [119] nMut in 1, 5: n = 2279.52785380776
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5845953 
+|   |   |   |   |   |   [120] nMut in 2, 3, 4, 6: n = 3160.58634804255
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5001641 
+|   |   |   |   |   [121] SSWM > 0.92464: n = 2050.25732880869
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3424844 
+|   |   |   |   [122] propLocalMax > 0.7767: n = 2364.23506681694
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2924302 
+|   [123] nMut in 9: n = 9645.99952317848
+|       (Intercept) 
+|         0.1107806 
+
+Number of inner nodes:    61
+Number of terminal nodes: 62
+Number of parameters per node: 1
+Objective function (residual sum of squares): 115.338
+
+     done
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00533994 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00260823 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0214906 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0134499 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0135056 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0135056 (tol = 0.002, component 1)
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00533994 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00260823 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0214906 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0134499 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0135056 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0135056 (tol = 0.002, component 1)
+[1] "Thu Jul 23 01:53:47 2020"

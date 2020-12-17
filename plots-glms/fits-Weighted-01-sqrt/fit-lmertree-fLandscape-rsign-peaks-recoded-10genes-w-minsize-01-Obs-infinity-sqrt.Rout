@@ -1,0 +1,1581 @@
+nohup: ignoring input
+[1] "Wed Sep  9 19:31:13 2020"
+[1] 110125
+Loading required package: grid
+Loading required package: libcoin
+Loading required package: mvtnorm
+Loading required package: lme4
+Loading required package: Matrix
+tree_best: no visible binding for global variable ‘localformula’
+tree_best: no visible binding for global variable ‘localdata’
+tree_best: no visible binding for global variable ‘numGenes’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘numGenes’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘typeLandscape_f’
+tree_best: no visible binding for global variable ‘..allvars’
+tree_best: no visible binding for global variable ‘nMut’
+tree_best: no visible binding for global variable ‘sample_size’
+tree_best: no visible binding for global variable ‘sampledProp’
+Warning message:
+In rm(localformula) : object 'localformula' not found
+Warning message:
+In rm(localdata) : object 'localdata' not found
+[1] 2418930
+[1] 2418930
+
+ post sampledProp trimming
+ [1] 2418930
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  1708650  91.3    2622087 140.1  2622087 140.1
+Vcells 51281324 391.3   74688479 569.9 51300372 391.4
+               typeLandscape
+typeLandscape_f Represent. Local maxima    RMF
+            Rep     928755            0      0
+            LM           0       760260      0
+            RMF          0            0 729915
+
+ nrow(localdata) [1] 1729905
+
+ nrow(localdata) post-trimming before mfw [1] 1715676
+
+ Multiplication factor for weights is  61.85688 
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_BBY_allFL_Inf
+
+ nrow data set =  1715676 
+
+    Using minsize =  17157 
+
+   sum of weights =  1715676 
+    user   system  elapsed 
+42933.37 61006.83 19126.78 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + detect + sample_size + SSWM + gamma + epistRSign + 
+    numObservedPeaks + diff_obs_prop + observedProp + fitnessRank + 
+    propLocalMax + typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] propLocalMax <= 0.3162
+|   |   [3] nMut in 1, 2, 3, 4, 5, 6, 7, 8
+|   |   |   [4] fitnessRank <= 81
+|   |   |   |   [5] detect in large
+|   |   |   |   |   [6] sample_size in 50, 200
+|   |   |   |   |   |   [7] epistRSign <= 0.00278
+|   |   |   |   |   |   |   [8] sample_size in 50
+|   |   |   |   |   |   |   |   [9] SSWM <= 0.89152
+|   |   |   |   |   |   |   |   |   [10] gamma <= 0.53444: n = 27376.1975501835
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8935957 
+|   |   |   |   |   |   |   |   |   [11] gamma > 0.53444: n = 17450.0424914979
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8376863 
+|   |   |   |   |   |   |   |   [12] SSWM > 0.89152: n = 20087.3786346927
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |           0.94428 
+|   |   |   |   |   |   |   [13] sample_size in 200
+|   |   |   |   |   |   |   |   [14] gamma <= 0.46261: n = 32248.7475348971
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.814754 
+|   |   |   |   |   |   |   |   [15] gamma > 0.46261: n = 32668.0876992636
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6967738 
+|   |   |   |   |   |   [16] epistRSign > 0.00278
+|   |   |   |   |   |   |   [17] epistRSign <= 0.01311: n = 33666.194858984
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6922053 
+|   |   |   |   |   |   |   [18] epistRSign > 0.01311
+|   |   |   |   |   |   |   |   [19] nMut in 4, 5, 6, 7: n = 28780.0270820257
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6199117 
+|   |   |   |   |   |   |   |   [20] nMut in 1, 2, 3, 8: n = 30581.6829551923
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5868345 
+|   |   |   |   |   [21] sample_size in 4000
+|   |   |   |   |   |   [22] gamma <= 0.54123
+|   |   |   |   |   |   |   [23] epistRSign <= 0.0013: n = 37732.4806131969
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.515457 
+|   |   |   |   |   |   |   [24] epistRSign > 0.0013
+|   |   |   |   |   |   |   |   [25] epistRSign <= 0.225: n = 17162.6244961992
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6018147 
+|   |   |   |   |   |   |   |   [26] epistRSign > 0.225: n = 17877.7054991372
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5728224 
+|   |   |   |   |   |   [27] gamma > 0.54123
+|   |   |   |   |   |   |   [28] fitnessRank <= 24: n = 21463.9354679171
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5964672 
+|   |   |   |   |   |   |   [29] fitnessRank > 24: n = 17196.4447456191
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6263505 
+|   |   |   |   [30] detect in small, uniform
+|   |   |   |   |   [31] epistRSign <= 0.00174
+|   |   |   |   |   |   [32] gamma <= 0.54168
+|   |   |   |   |   |   |   [33] sample_size in 50
+|   |   |   |   |   |   |   |   [34] gamma <= 0.3586: n = 30311.0003389161
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5144502 
+|   |   |   |   |   |   |   |   [35] gamma > 0.3586
+|   |   |   |   |   |   |   |   |   [36] gamma <= 0.4582: n = 36977.2019164581
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5870184 
+|   |   |   |   |   |   |   |   |   [37] gamma > 0.4582: n = 20527.5769391678
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5423066 
+|   |   |   |   |   |   |   [38] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [39] gamma <= 0.34502
+|   |   |   |   |   |   |   |   |   [40] sample_size in 200: n = 24597.7596768529
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3390451 
+|   |   |   |   |   |   |   |   |   [41] sample_size in 4000: n = 24598.733922721
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.2959834 
+|   |   |   |   |   |   |   |   [42] gamma > 0.34502
+|   |   |   |   |   |   |   |   |   [43] gamma <= 0.41422
+|   |   |   |   |   |   |   |   |   |   [44] sample_size in 200: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4517726 
+|   |   |   |   |   |   |   |   |   |   [45] sample_size in 4000: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4024171 
+|   |   |   |   |   |   |   |   |   [46] gamma > 0.41422: n = 74206.2788646727
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4928501 
+|   |   |   |   |   |   [47] gamma > 0.54168
+|   |   |   |   |   |   |   [48] gamma <= 0.60698
+|   |   |   |   |   |   |   |   [49] sample_size in 50: n = 18050.7965150298
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6210323 
+|   |   |   |   |   |   |   |   [50] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [51] observedProp <= 0.04575: n = 17922.7094725537
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5984269 
+|   |   |   |   |   |   |   |   |   [52] observedProp > 0.04575: n = 18178.8835575058
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5651484 
+|   |   |   |   |   |   |   [53] gamma > 0.60698: n = 37424.263241826
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6562262 
+|   |   |   |   |   [54] epistRSign > 0.00174
+|   |   |   |   |   |   [55] detect in small
+|   |   |   |   |   |   |   [56] epistRSign <= 0.00634: n = 45823.1904777362
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6411868 
+|   |   |   |   |   |   |   [57] epistRSign > 0.00634
+|   |   |   |   |   |   |   |   [58] propLocalMax <= 5e-05: n = 34124.622386146
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7070533 
+|   |   |   |   |   |   |   |   [59] propLocalMax > 5e-05: n = 17870.1373098066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6507584 
+|   |   |   |   |   |   [60] detect in uniform
+|   |   |   |   |   |   |   [61] observedProp <= 0.01: n = 17879.5271842683
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.657703 
+|   |   |   |   |   |   |   [62] observedProp > 0.01
+|   |   |   |   |   |   |   |   [63] fitnessRank <= 21
+|   |   |   |   |   |   |   |   |   [64] propLocalMax <= 0.05735: n = 17290.7455599595
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5624866 
+|   |   |   |   |   |   |   |   |   [65] propLocalMax > 0.05735: n = 17379.9369959697
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6012124 
+|   |   |   |   |   |   |   |   [66] fitnessRank > 21
+|   |   |   |   |   |   |   |   |   [67] epistRSign <= 0.23203
+|   |   |   |   |   |   |   |   |   |   [68] nMut in 1, 4: n = 17234.5826052987
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6429512 
+|   |   |   |   |   |   |   |   |   |   [69] nMut in 2, 3, 5, 6, 7, 8: n = 24057.4954967736
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6261883 
+|   |   |   |   |   |   |   |   |   [70] epistRSign > 0.23203: n = 17344.1002122451
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5884098 
+|   |   |   [71] fitnessRank > 81
+|   |   |   |   [72] epistRSign <= 0.01007
+|   |   |   |   |   [73] gamma <= 0.56061: n = 23141.0765334573
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.6014423 
+|   |   |   |   |   [74] gamma > 0.56061
+|   |   |   |   |   |   [75] detect in small: n = 42376.4013818503
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |          0.689494 
+|   |   |   |   |   |   [76] detect in large, uniform: n = 36413.6455280221
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7112395 
+|   |   |   |   [77] epistRSign > 0.01007
+|   |   |   |   |   [78] detect in small
+|   |   |   |   |   |   [79] gamma <= 0.16301: n = 63373.032860252
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7825417 
+|   |   |   |   |   |   [80] gamma > 0.16301
+|   |   |   |   |   |   |   [81] numObservedPeaks <= 22
+|   |   |   |   |   |   |   |   [82] sample_size in 50: n = 19149.0437786109
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7525941 
+|   |   |   |   |   |   |   |   [83] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [84] epistRSign <= 0.02726: n = 17238.3373179458
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7289028 
+|   |   |   |   |   |   |   |   |   [85] epistRSign > 0.02726: n = 21176.1772597756
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7394569 
+|   |   |   |   |   |   |   [86] numObservedPeaks > 22: n = 27631.6077026613
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7675972 
+|   |   |   |   |   [87] detect in large, uniform
+|   |   |   |   |   |   [88] fitnessRank <= 180
+|   |   |   |   |   |   |   [89] sample_size in 50: n = 28862.1699265015
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7358532 
+|   |   |   |   |   |   |   [90] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [91] detect in large: n = 30531.9995087651
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7123134 
+|   |   |   |   |   |   |   |   [92] detect in uniform: n = 27194.9445189074
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7289081 
+|   |   |   |   |   |   [93] fitnessRank > 180
+|   |   |   |   |   |   |   [94] SSWM <= 0.84675: n = 28159.3242145287
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7397617 
+|   |   |   |   |   |   |   [95] SSWM > 0.84675
+|   |   |   |   |   |   |   |   [96] detect in large: n = 19801.8256243414
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7490475 
+|   |   |   |   |   |   |   |   [97] detect in uniform: n = 33308.7084822854
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7649368 
+|   |   [98] nMut in 0, 9
+|   |   |   [99] sample_size in 50
+|   |   |   |   [100] detect in large, small: n = 19057.7306515992
+|   |   |   |       (Intercept) 
+|   |   |   |         0.6170693 
+|   |   |   |   [101] detect in uniform: n = 24450.2588524282
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3392975 
+|   |   |   [102] sample_size in 200, 4000
+|   |   |   |   [103] nMut in 0
+|   |   |   |   |   [104] observedProp <= 0.0845: n = 17236.7352247405
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.355798 
+|   |   |   |   |   [105] observedProp > 0.0845: n = 26617.4641466681
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3873068 
+|   |   |   |   [106] nMut in 9
+|   |   |   |   |   [107] detect in large: n = 23799.8615894414
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3530758 
+|   |   |   |   |   [108] detect in small, uniform: n = 19751.0442182851
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |        0.09772791 
+|   [109] propLocalMax > 0.3162
+|   |   [110] fitnessRank <= 23
+|   |   |   [111] epistRSign <= 0.00139
+|   |   |   |   [112] detect in large: n = 17844.454333018
+|   |   |   |       (Intercept) 
+|   |   |   |           0.59391 
+|   |   |   |   [113] detect in small, uniform: n = 23218.5337192343
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3033057 
+|   |   |   [114] epistRSign > 0.00139
+|   |   |   |   [115] propLocalMax <= 0.7543
+|   |   |   |   |   [116] numObservedPeaks <= 14: n = 27377.4779876101
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.324301 
+|   |   |   |   |   [117] numObservedPeaks > 14: n = 25137.3063171182
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2309873 
+|   |   |   |   [118] propLocalMax > 0.7543: n = 21419.7696552316
+|   |   |   |       (Intercept) 
+|   |   |   |         0.1668418 
+|   |   [119] fitnessRank > 23
+|   |   |   [120] SSWM <= 0.92464
+|   |   |   |   [121] propLocalMax <= 0.76655
+|   |   |   |   |   [122] detect in large: n = 32180.7791945906
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.5160778 
+|   |   |   |   |   [123] detect in small, uniform
+|   |   |   |   |   |   [124] nMut in 1, 3: n = 20857.4782400021
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5110844 
+|   |   |   |   |   |   [125] nMut in 2, 4, 5, 6: n = 21983.8332700879
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.4742248 
+|   |   |   |   [126] propLocalMax > 0.76655: n = 38329.5603380263
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3452756 
+|   |   |   [127] SSWM > 0.92464
+|   |   |   |   [128] fitnessRank <= 72: n = 21898.0315911298
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2574672 
+|   |   |   |   [129] fitnessRank > 72: n = 17829.2097048159
+|   |   |   |       (Intercept) 
+|   |   |   |          0.398083 
+
+Number of inner nodes:    64
+Number of terminal nodes: 65
+Number of parameters per node: 1
+Objective function (residual sum of squares): 32507.3
+
+     done
+Warning message:
+In selectChildren(ac[!fin], -1) : error 'No child processes' in select
+Warning message:
+In selectChildren(ac[!fin], -1) : error 'No child processes' in select
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_allFL_Inf
+
+ nrow data set =  1715676 
+
+    Using minsize =  17157 
+
+   sum of weights =  1715676 
+    user   system  elapsed 
+51739.27 67039.74 28770.61 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + detect + sample_size + SSWM + gamma + epistRSign + 
+    numObservedPeaks + diff_obs_prop + observedProp + fitnessRank + 
+    propLocalMax + typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] propLocalMax <= 0.3162
+|   |   [3] nMut in 1, 2, 3, 4, 5, 6, 7, 8
+|   |   |   [4] fitnessRank <= 81
+|   |   |   |   [5] detect in large
+|   |   |   |   |   [6] sample_size in 50, 200
+|   |   |   |   |   |   [7] epistRSign <= 0.00278
+|   |   |   |   |   |   |   [8] sample_size in 50
+|   |   |   |   |   |   |   |   [9] SSWM <= 0.89152
+|   |   |   |   |   |   |   |   |   [10] gamma <= 0.53444: n = 27376.1975501835
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8935956 
+|   |   |   |   |   |   |   |   |   [11] gamma > 0.53444: n = 17450.0424914979
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8376862 
+|   |   |   |   |   |   |   |   [12] SSWM > 0.89152: n = 20087.3786346927
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.9442799 
+|   |   |   |   |   |   |   [13] sample_size in 200
+|   |   |   |   |   |   |   |   [14] gamma <= 0.46261: n = 32248.7475348971
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.8147539 
+|   |   |   |   |   |   |   |   [15] gamma > 0.46261: n = 32668.0876992636
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6967736 
+|   |   |   |   |   |   [16] epistRSign > 0.00278
+|   |   |   |   |   |   |   [17] epistRSign <= 0.01311: n = 33666.194858984
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6922052 
+|   |   |   |   |   |   |   [18] epistRSign > 0.01311
+|   |   |   |   |   |   |   |   [19] nMut in 4, 5, 6, 7: n = 28780.0270820257
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6199115 
+|   |   |   |   |   |   |   |   [20] nMut in 1, 2, 3, 8: n = 30581.6829551923
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5868344 
+|   |   |   |   |   [21] sample_size in 4000
+|   |   |   |   |   |   [22] gamma <= 0.54123
+|   |   |   |   |   |   |   [23] epistRSign <= 0.0013: n = 37732.4806131969
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5154569 
+|   |   |   |   |   |   |   [24] epistRSign > 0.0013
+|   |   |   |   |   |   |   |   [25] epistRSign <= 0.225: n = 17162.6244961992
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6018146 
+|   |   |   |   |   |   |   |   [26] epistRSign > 0.225: n = 17877.7054991372
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5728223 
+|   |   |   |   |   |   [27] gamma > 0.54123
+|   |   |   |   |   |   |   [28] fitnessRank <= 24: n = 21463.9354679171
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.596467 
+|   |   |   |   |   |   |   [29] fitnessRank > 24: n = 17196.4447456191
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6263504 
+|   |   |   |   [30] detect in small, uniform
+|   |   |   |   |   [31] epistRSign <= 0.00174
+|   |   |   |   |   |   [32] gamma <= 0.54168
+|   |   |   |   |   |   |   [33] sample_size in 50
+|   |   |   |   |   |   |   |   [34] gamma <= 0.3586: n = 30311.0003389161
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5144501 
+|   |   |   |   |   |   |   |   [35] gamma > 0.3586
+|   |   |   |   |   |   |   |   |   [36] gamma <= 0.4582: n = 36977.2019164581
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5870183 
+|   |   |   |   |   |   |   |   |   [37] gamma > 0.4582: n = 20527.5769391678
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5423065 
+|   |   |   |   |   |   |   [38] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [39] gamma <= 0.34502
+|   |   |   |   |   |   |   |   |   [40] sample_size in 200: n = 24597.7596768529
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.339045 
+|   |   |   |   |   |   |   |   |   [41] sample_size in 4000: n = 24598.733922721
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.2959833 
+|   |   |   |   |   |   |   |   [42] gamma > 0.34502
+|   |   |   |   |   |   |   |   |   [43] gamma <= 0.41422
+|   |   |   |   |   |   |   |   |   |   [44] sample_size in 200: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4517725 
+|   |   |   |   |   |   |   |   |   |   [45] sample_size in 4000: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.402417 
+|   |   |   |   |   |   |   |   |   [46] gamma > 0.41422: n = 74206.2788646727
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |           0.49285 
+|   |   |   |   |   |   [47] gamma > 0.54168
+|   |   |   |   |   |   |   [48] gamma <= 0.60698
+|   |   |   |   |   |   |   |   [49] sample_size in 50: n = 18050.7965150298
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6210321 
+|   |   |   |   |   |   |   |   [50] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [51] observedProp <= 0.04575: n = 17922.7094725537
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5984267 
+|   |   |   |   |   |   |   |   |   [52] observedProp > 0.04575: n = 18178.8835575058
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5651482 
+|   |   |   |   |   |   |   [53] gamma > 0.60698: n = 37424.263241826
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.656226 
+|   |   |   |   |   [54] epistRSign > 0.00174
+|   |   |   |   |   |   [55] detect in small
+|   |   |   |   |   |   |   [56] epistRSign <= 0.00634: n = 45823.1904777362
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6411866 
+|   |   |   |   |   |   |   [57] epistRSign > 0.00634
+|   |   |   |   |   |   |   |   [58] propLocalMax <= 5e-05: n = 34124.622386146
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7070531 
+|   |   |   |   |   |   |   |   [59] propLocalMax > 5e-05: n = 17870.1373098066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6507583 
+|   |   |   |   |   |   [60] detect in uniform
+|   |   |   |   |   |   |   [61] observedProp <= 0.01: n = 17879.5271842683
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6577028 
+|   |   |   |   |   |   |   [62] observedProp > 0.01
+|   |   |   |   |   |   |   |   [63] fitnessRank <= 21
+|   |   |   |   |   |   |   |   |   [64] propLocalMax <= 0.05735: n = 17290.7455599595
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5624865 
+|   |   |   |   |   |   |   |   |   [65] propLocalMax > 0.05735: n = 17379.9369959697
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6012122 
+|   |   |   |   |   |   |   |   [66] fitnessRank > 21
+|   |   |   |   |   |   |   |   |   [67] epistRSign <= 0.23203
+|   |   |   |   |   |   |   |   |   |   [68] nMut in 1, 4: n = 17234.5826052987
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6429511 
+|   |   |   |   |   |   |   |   |   |   [69] nMut in 2, 3, 5, 6, 7, 8: n = 24057.4954967736
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6261882 
+|   |   |   |   |   |   |   |   |   [70] epistRSign > 0.23203: n = 17344.1002122451
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5884096 
+|   |   |   [71] fitnessRank > 81
+|   |   |   |   [72] epistRSign <= 0.01007
+|   |   |   |   |   [73] gamma <= 0.56061: n = 23141.0765334573
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.6014422 
+|   |   |   |   |   [74] gamma > 0.56061
+|   |   |   |   |   |   [75] detect in small: n = 42376.4013818503
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.6894936 
+|   |   |   |   |   |   [76] detect in large, uniform: n = 36413.6455280221
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7112391 
+|   |   |   |   [77] epistRSign > 0.01007
+|   |   |   |   |   [78] detect in small
+|   |   |   |   |   |   [79] gamma <= 0.16301: n = 63373.032860252
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7825416 
+|   |   |   |   |   |   [80] gamma > 0.16301
+|   |   |   |   |   |   |   [81] numObservedPeaks <= 22
+|   |   |   |   |   |   |   |   [82] sample_size in 50: n = 19149.0437786109
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.752594 
+|   |   |   |   |   |   |   |   [83] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [84] epistRSign <= 0.02726: n = 17238.3373179458
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7289026 
+|   |   |   |   |   |   |   |   |   [85] epistRSign > 0.02726: n = 21176.1772597756
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7394568 
+|   |   |   |   |   |   |   [86] numObservedPeaks > 22: n = 27631.6077026613
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7675971 
+|   |   |   |   |   [87] detect in large, uniform
+|   |   |   |   |   |   [88] fitnessRank <= 180
+|   |   |   |   |   |   |   [89] sample_size in 50: n = 28862.1699265015
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7358531 
+|   |   |   |   |   |   |   [90] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [91] detect in large: n = 30531.9995087651
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7123133 
+|   |   |   |   |   |   |   |   [92] detect in uniform: n = 27194.9445189074
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.728908 
+|   |   |   |   |   |   [93] fitnessRank > 180
+|   |   |   |   |   |   |   [94] SSWM <= 0.84675: n = 28159.3242145287
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7397616 
+|   |   |   |   |   |   |   [95] SSWM > 0.84675
+|   |   |   |   |   |   |   |   [96] detect in large: n = 19801.8256243414
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7490474 
+|   |   |   |   |   |   |   |   [97] detect in uniform: n = 33308.7084822854
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7649367 
+|   |   [98] nMut in 0, 9
+|   |   |   [99] sample_size in 50
+|   |   |   |   [100] detect in large, small: n = 19057.7306515992
+|   |   |   |       (Intercept) 
+|   |   |   |         0.6170692 
+|   |   |   |   [101] detect in uniform: n = 24450.2588524282
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3392974 
+|   |   |   [102] sample_size in 200, 4000
+|   |   |   |   [103] nMut in 0
+|   |   |   |   |   [104] observedProp <= 0.0845: n = 17236.7352247405
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3557979 
+|   |   |   |   |   [105] observedProp > 0.0845: n = 26617.4641466681
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3873067 
+|   |   |   |   [106] nMut in 9
+|   |   |   |   |   [107] detect in large: n = 23799.8615894414
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3530757 
+|   |   |   |   |   [108] detect in small, uniform: n = 19751.0442182851
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |        0.09772783 
+|   [109] propLocalMax > 0.3162
+|   |   [110] fitnessRank <= 23
+|   |   |   [111] epistRSign <= 0.00139
+|   |   |   |   [112] detect in large: n = 17844.454333018
+|   |   |   |       (Intercept) 
+|   |   |   |         0.5939104 
+|   |   |   |   [113] detect in small, uniform: n = 23218.5337192343
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3033061 
+|   |   |   [114] epistRSign > 0.00139
+|   |   |   |   [115] propLocalMax <= 0.7543
+|   |   |   |   |   [116] numObservedPeaks <= 14: n = 27377.4779876101
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3243009 
+|   |   |   |   |   [117] numObservedPeaks > 14: n = 25137.3063171182
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2309873 
+|   |   |   |   [118] propLocalMax > 0.7543: n = 21419.7696552316
+|   |   |   |       (Intercept) 
+|   |   |   |         0.1668419 
+|   |   [119] fitnessRank > 23
+|   |   |   [120] SSWM <= 0.92464
+|   |   |   |   [121] propLocalMax <= 0.76655
+|   |   |   |   |   [122] detect in large: n = 32180.7791945906
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.5160779 
+|   |   |   |   |   [123] detect in small, uniform
+|   |   |   |   |   |   [124] nMut in 1, 3: n = 20857.4782400021
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5110845 
+|   |   |   |   |   |   [125] nMut in 2, 4, 5, 6: n = 21983.8332700879
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.4742249 
+|   |   |   |   [126] propLocalMax > 0.76655: n = 38329.5603380263
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3452761 
+|   |   |   [127] SSWM > 0.92464
+|   |   |   |   [128] fitnessRank <= 72: n = 21898.0315911298
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2574671 
+|   |   |   |   [129] fitnessRank > 72: n = 17829.2097048159
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3980829 
+
+Number of inner nodes:    64
+Number of terminal nodes: 65
+Number of parameters per node: 1
+Objective function (residual sum of squares): 32507.3
+
+     done
+Warning message:
+In selectChildren(ac[!fin], -1) : error 'No child processes' in select
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_default_allFL_Inf
+
+ nrow data set =  1715676 
+
+    Using minsize =  17157 
+
+   sum of weights =  1715676 
+    user   system  elapsed 
+39793.00 69066.18 17665.14 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + detect + sample_size + SSWM + gamma + epistRSign + 
+    numObservedPeaks + diff_obs_prop + observedProp + fitnessRank + 
+    propLocalMax + typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] propLocalMax <= 0.3162
+|   |   [3] nMut in 1, 2, 3, 4, 5, 6, 7, 8
+|   |   |   [4] fitnessRank <= 81
+|   |   |   |   [5] detect in large
+|   |   |   |   |   [6] sample_size in 50, 200
+|   |   |   |   |   |   [7] epistRSign <= 0.00278
+|   |   |   |   |   |   |   [8] sample_size in 50
+|   |   |   |   |   |   |   |   [9] SSWM <= 0.89152
+|   |   |   |   |   |   |   |   |   [10] gamma <= 0.53444: n = 27376.1975501835
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8935959 
+|   |   |   |   |   |   |   |   |   [11] gamma > 0.53444: n = 17450.0424914979
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8376867 
+|   |   |   |   |   |   |   |   [12] SSWM > 0.89152: n = 20087.3786346927
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.9442803 
+|   |   |   |   |   |   |   [13] sample_size in 200
+|   |   |   |   |   |   |   |   [14] gamma <= 0.46261: n = 32248.7475348971
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.8147542 
+|   |   |   |   |   |   |   |   [15] gamma > 0.46261: n = 32668.0876992636
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6967741 
+|   |   |   |   |   |   [16] epistRSign > 0.00278
+|   |   |   |   |   |   |   [17] epistRSign <= 0.01311: n = 33666.194858984
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6922057 
+|   |   |   |   |   |   |   [18] epistRSign > 0.01311
+|   |   |   |   |   |   |   |   [19] nMut in 4, 5, 6, 7: n = 28780.0270820257
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.619912 
+|   |   |   |   |   |   |   |   [20] nMut in 1, 2, 3, 8: n = 30581.6829551923
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5868348 
+|   |   |   |   |   [21] sample_size in 4000
+|   |   |   |   |   |   [22] gamma <= 0.54123
+|   |   |   |   |   |   |   [23] epistRSign <= 0.0013: n = 37732.4806131969
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5154572 
+|   |   |   |   |   |   |   [24] epistRSign > 0.0013
+|   |   |   |   |   |   |   |   [25] epistRSign <= 0.225: n = 17162.6244961992
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.601815 
+|   |   |   |   |   |   |   |   [26] epistRSign > 0.225: n = 17877.7054991372
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5728227 
+|   |   |   |   |   |   [27] gamma > 0.54123
+|   |   |   |   |   |   |   [28] fitnessRank <= 24: n = 21463.9354679171
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5964676 
+|   |   |   |   |   |   |   [29] fitnessRank > 24: n = 17196.4447456191
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6263508 
+|   |   |   |   [30] detect in small, uniform
+|   |   |   |   |   [31] epistRSign <= 0.00174
+|   |   |   |   |   |   [32] gamma <= 0.54168
+|   |   |   |   |   |   |   [33] sample_size in 50
+|   |   |   |   |   |   |   |   [34] gamma <= 0.3586: n = 30311.0003389161
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5144504 
+|   |   |   |   |   |   |   |   [35] gamma > 0.3586
+|   |   |   |   |   |   |   |   |   [36] gamma <= 0.4582: n = 36977.2019164581
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5870187 
+|   |   |   |   |   |   |   |   |   [37] gamma > 0.4582: n = 20527.5769391678
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5423068 
+|   |   |   |   |   |   |   [38] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [39] gamma <= 0.34502
+|   |   |   |   |   |   |   |   |   [40] sample_size in 200: n = 24597.7596768529
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3390453 
+|   |   |   |   |   |   |   |   |   [41] sample_size in 4000: n = 24598.733922721
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.2959836 
+|   |   |   |   |   |   |   |   [42] gamma > 0.34502
+|   |   |   |   |   |   |   |   |   [43] gamma <= 0.41422
+|   |   |   |   |   |   |   |   |   |   [44] sample_size in 200: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4517728 
+|   |   |   |   |   |   |   |   |   |   [45] sample_size in 4000: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4024173 
+|   |   |   |   |   |   |   |   |   [46] gamma > 0.41422: n = 74206.2788646727
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.4928503 
+|   |   |   |   |   |   [47] gamma > 0.54168
+|   |   |   |   |   |   |   [48] gamma <= 0.60698
+|   |   |   |   |   |   |   |   [49] sample_size in 50: n = 18050.7965150298
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6210327 
+|   |   |   |   |   |   |   |   [50] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [51] observedProp <= 0.04575: n = 17922.7094725537
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5984272 
+|   |   |   |   |   |   |   |   |   [52] observedProp > 0.04575: n = 18178.8835575058
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5651487 
+|   |   |   |   |   |   |   [53] gamma > 0.60698: n = 37424.263241826
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6562265 
+|   |   |   |   |   [54] epistRSign > 0.00174
+|   |   |   |   |   |   [55] detect in small
+|   |   |   |   |   |   |   [56] epistRSign <= 0.00634: n = 45823.1904777362
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6411871 
+|   |   |   |   |   |   |   [57] epistRSign > 0.00634
+|   |   |   |   |   |   |   |   [58] propLocalMax <= 5e-05: n = 34124.622386146
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7070536 
+|   |   |   |   |   |   |   |   [59] propLocalMax > 5e-05: n = 17870.1373098066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6507587 
+|   |   |   |   |   |   [60] detect in uniform
+|   |   |   |   |   |   |   [61] observedProp <= 0.01: n = 17879.5271842683
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6577032 
+|   |   |   |   |   |   |   [62] observedProp > 0.01
+|   |   |   |   |   |   |   |   [63] fitnessRank <= 21
+|   |   |   |   |   |   |   |   |   [64] propLocalMax <= 0.05735: n = 17290.7455599595
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5624869 
+|   |   |   |   |   |   |   |   |   [65] propLocalMax > 0.05735: n = 17379.9369959697
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6012127 
+|   |   |   |   |   |   |   |   [66] fitnessRank > 21
+|   |   |   |   |   |   |   |   |   [67] epistRSign <= 0.23203
+|   |   |   |   |   |   |   |   |   |   [68] nMut in 1, 4: n = 17234.5826052987
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6429516 
+|   |   |   |   |   |   |   |   |   |   [69] nMut in 2, 3, 5, 6, 7, 8: n = 24057.4954967736
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6261887 
+|   |   |   |   |   |   |   |   |   [70] epistRSign > 0.23203: n = 17344.1002122451
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5884101 
+|   |   |   [71] fitnessRank > 81
+|   |   |   |   [72] epistRSign <= 0.01007
+|   |   |   |   |   [73] gamma <= 0.56061: n = 23141.0765334573
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.6014427 
+|   |   |   |   |   [74] gamma > 0.56061
+|   |   |   |   |   |   [75] detect in small: n = 42376.4013818503
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.6894948 
+|   |   |   |   |   |   [76] detect in large, uniform: n = 36413.6455280221
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7112403 
+|   |   |   |   [77] epistRSign > 0.01007
+|   |   |   |   |   [78] detect in small
+|   |   |   |   |   |   [79] gamma <= 0.16301: n = 63373.032860252
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7825419 
+|   |   |   |   |   |   [80] gamma > 0.16301
+|   |   |   |   |   |   |   [81] numObservedPeaks <= 22
+|   |   |   |   |   |   |   |   [82] sample_size in 50: n = 19149.0437786109
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7525944 
+|   |   |   |   |   |   |   |   [83] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [84] epistRSign <= 0.02726: n = 17238.3373179458
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.728903 
+|   |   |   |   |   |   |   |   |   [85] epistRSign > 0.02726: n = 21176.1772597756
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7394571 
+|   |   |   |   |   |   |   [86] numObservedPeaks > 22: n = 27631.6077026613
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7675975 
+|   |   |   |   |   [87] detect in large, uniform
+|   |   |   |   |   |   [88] fitnessRank <= 180
+|   |   |   |   |   |   |   [89] sample_size in 50: n = 28862.1699265015
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7358534 
+|   |   |   |   |   |   |   [90] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [91] detect in large: n = 30531.9995087651
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7123137 
+|   |   |   |   |   |   |   |   [92] detect in uniform: n = 27194.9445189074
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7289083 
+|   |   |   |   |   |   [93] fitnessRank > 180
+|   |   |   |   |   |   |   [94] SSWM <= 0.84675: n = 28159.3242145287
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.739762 
+|   |   |   |   |   |   |   [95] SSWM > 0.84675
+|   |   |   |   |   |   |   |   [96] detect in large: n = 19801.8256243414
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7490478 
+|   |   |   |   |   |   |   |   [97] detect in uniform: n = 33308.7084822854
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.764937 
+|   |   [98] nMut in 0, 9
+|   |   |   [99] sample_size in 50
+|   |   |   |   [100] detect in large, small: n = 19057.7306515992
+|   |   |   |       (Intercept) 
+|   |   |   |         0.6170694 
+|   |   |   |   [101] detect in uniform: n = 24450.2588524282
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3392977 
+|   |   |   [102] sample_size in 200, 4000
+|   |   |   |   [103] nMut in 0
+|   |   |   |   |   [104] observedProp <= 0.0845: n = 17236.7352247405
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3557982 
+|   |   |   |   |   [105] observedProp > 0.0845: n = 26617.4641466681
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.387307 
+|   |   |   |   [106] nMut in 9
+|   |   |   |   |   [107] detect in large: n = 23799.8615894414
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.353076 
+|   |   |   |   |   [108] detect in small, uniform: n = 19751.0442182851
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.0977281 
+|   [109] propLocalMax > 0.3162
+|   |   [110] fitnessRank <= 23
+|   |   |   [111] epistRSign <= 0.00139
+|   |   |   |   [112] detect in large: n = 17844.454333018
+|   |   |   |       (Intercept) 
+|   |   |   |         0.5939093 
+|   |   |   |   [113] detect in small, uniform: n = 23218.5337192343
+|   |   |   |       (Intercept) 
+|   |   |   |          0.303305 
+|   |   |   [114] epistRSign > 0.00139
+|   |   |   |   [115] propLocalMax <= 0.7543
+|   |   |   |   |   [116] numObservedPeaks <= 14: n = 27377.4779876101
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3243011 
+|   |   |   |   |   [117] numObservedPeaks > 14: n = 25137.3063171182
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2309872 
+|   |   |   |   [118] propLocalMax > 0.7543: n = 21419.7696552316
+|   |   |   |       (Intercept) 
+|   |   |   |         0.1668416 
+|   |   [119] fitnessRank > 23
+|   |   |   [120] SSWM <= 0.92464
+|   |   |   |   [121] propLocalMax <= 0.76655
+|   |   |   |   |   [122] detect in large: n = 32180.7791945906
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.5160775 
+|   |   |   |   |   [123] detect in small, uniform
+|   |   |   |   |   |   [124] nMut in 1, 3: n = 20857.4782400021
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5110842 
+|   |   |   |   |   |   [125] nMut in 2, 4, 5, 6: n = 21983.8332700879
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.4742245 
+|   |   |   |   [126] propLocalMax > 0.76655: n = 38329.5603380263
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3452744 
+|   |   |   [127] SSWM > 0.92464
+|   |   |   |   [128] fitnessRank <= 72: n = 21898.0315911298
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2574674 
+|   |   |   |   [129] fitnessRank > 72: n = 17829.2097048159
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3980832 
+
+Number of inner nodes:    64
+Number of terminal nodes: 65
+Number of parameters per node: 1
+Objective function (residual sum of squares): 32507.3
+
+     done
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00255523 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.01285 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00312298 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00290771 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00400658 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00230627 (tol = 0.002, component 1)
+7: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00414036 (tol = 0.002, component 1)
+8: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00254628 (tol = 0.002, component 1)
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00255523 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.01285 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00312298 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00290771 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00400658 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00230627 (tol = 0.002, component 1)
+7: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00414036 (tol = 0.002, component 1)
+8: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00254628 (tol = 0.002, component 1)
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NLM_allFL_Inf
+
+ nrow data set =  1715676 
+
+    Using minsize =  17157 
+
+   sum of weights =  1715676 
+    user   system  elapsed 
+47344.06 73146.28 26261.35 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + detect + sample_size + SSWM + gamma + epistRSign + 
+    numObservedPeaks + diff_obs_prop + observedProp + fitnessRank + 
+    propLocalMax + typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] propLocalMax <= 0.3162
+|   |   [3] nMut in 1, 2, 3, 4, 5, 6, 7, 8
+|   |   |   [4] fitnessRank <= 81
+|   |   |   |   [5] detect in large
+|   |   |   |   |   [6] sample_size in 50, 200
+|   |   |   |   |   |   [7] epistRSign <= 0.00278
+|   |   |   |   |   |   |   [8] sample_size in 50
+|   |   |   |   |   |   |   |   [9] SSWM <= 0.89152
+|   |   |   |   |   |   |   |   |   [10] gamma <= 0.53444: n = 27376.1975501835
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8935957 
+|   |   |   |   |   |   |   |   |   [11] gamma > 0.53444: n = 17450.0424914979
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8376863 
+|   |   |   |   |   |   |   |   [12] SSWM > 0.89152: n = 20087.3786346927
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |           0.94428 
+|   |   |   |   |   |   |   [13] sample_size in 200
+|   |   |   |   |   |   |   |   [14] gamma <= 0.46261: n = 32248.7475348971
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.814754 
+|   |   |   |   |   |   |   |   [15] gamma > 0.46261: n = 32668.0876992636
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6967737 
+|   |   |   |   |   |   [16] epistRSign > 0.00278
+|   |   |   |   |   |   |   [17] epistRSign <= 0.01311: n = 33666.194858984
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6922053 
+|   |   |   |   |   |   |   [18] epistRSign > 0.01311
+|   |   |   |   |   |   |   |   [19] nMut in 4, 5, 6, 7: n = 28780.0270820257
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6199116 
+|   |   |   |   |   |   |   |   [20] nMut in 1, 2, 3, 8: n = 30581.6829551923
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5868345 
+|   |   |   |   |   [21] sample_size in 4000
+|   |   |   |   |   |   [22] gamma <= 0.54123
+|   |   |   |   |   |   |   [23] epistRSign <= 0.0013: n = 37732.4806131969
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.515457 
+|   |   |   |   |   |   |   [24] epistRSign > 0.0013
+|   |   |   |   |   |   |   |   [25] epistRSign <= 0.225: n = 17162.6244961992
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6018147 
+|   |   |   |   |   |   |   |   [26] epistRSign > 0.225: n = 17877.7054991372
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5728224 
+|   |   |   |   |   |   [27] gamma > 0.54123
+|   |   |   |   |   |   |   [28] fitnessRank <= 24: n = 21463.9354679171
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5964672 
+|   |   |   |   |   |   |   [29] fitnessRank > 24: n = 17196.4447456191
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6263505 
+|   |   |   |   [30] detect in small, uniform
+|   |   |   |   |   [31] epistRSign <= 0.00174
+|   |   |   |   |   |   [32] gamma <= 0.54168
+|   |   |   |   |   |   |   [33] sample_size in 50
+|   |   |   |   |   |   |   |   [34] gamma <= 0.3586: n = 30311.0003389161
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5144501 
+|   |   |   |   |   |   |   |   [35] gamma > 0.3586
+|   |   |   |   |   |   |   |   |   [36] gamma <= 0.4582: n = 36977.2019164581
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5870184 
+|   |   |   |   |   |   |   |   |   [37] gamma > 0.4582: n = 20527.5769391678
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5423065 
+|   |   |   |   |   |   |   [38] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [39] gamma <= 0.34502
+|   |   |   |   |   |   |   |   |   [40] sample_size in 200: n = 24597.7596768529
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.3390451 
+|   |   |   |   |   |   |   |   |   [41] sample_size in 4000: n = 24598.733922721
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.2959833 
+|   |   |   |   |   |   |   |   [42] gamma > 0.34502
+|   |   |   |   |   |   |   |   |   [43] gamma <= 0.41422
+|   |   |   |   |   |   |   |   |   |   [44] sample_size in 200: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4517725 
+|   |   |   |   |   |   |   |   |   |   [45] sample_size in 4000: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4024171 
+|   |   |   |   |   |   |   |   |   [46] gamma > 0.41422: n = 74206.2788646727
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |           0.49285 
+|   |   |   |   |   |   [47] gamma > 0.54168
+|   |   |   |   |   |   |   [48] gamma <= 0.60698
+|   |   |   |   |   |   |   |   [49] sample_size in 50: n = 18050.7965150298
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6210323 
+|   |   |   |   |   |   |   |   [50] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [51] observedProp <= 0.04575: n = 17922.7094725537
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5984268 
+|   |   |   |   |   |   |   |   |   [52] observedProp > 0.04575: n = 18178.8835575058
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5651484 
+|   |   |   |   |   |   |   [53] gamma > 0.60698: n = 37424.263241826
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6562261 
+|   |   |   |   |   [54] epistRSign > 0.00174
+|   |   |   |   |   |   [55] detect in small
+|   |   |   |   |   |   |   [56] epistRSign <= 0.00634: n = 45823.1904777362
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6411867 
+|   |   |   |   |   |   |   [57] epistRSign > 0.00634
+|   |   |   |   |   |   |   |   [58] propLocalMax <= 5e-05: n = 34124.622386146
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7070532 
+|   |   |   |   |   |   |   |   [59] propLocalMax > 5e-05: n = 17870.1373098066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6507584 
+|   |   |   |   |   |   [60] detect in uniform
+|   |   |   |   |   |   |   [61] observedProp <= 0.01: n = 17879.5271842683
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6577029 
+|   |   |   |   |   |   |   [62] observedProp > 0.01
+|   |   |   |   |   |   |   |   [63] fitnessRank <= 21
+|   |   |   |   |   |   |   |   |   [64] propLocalMax <= 0.05735: n = 17290.7455599595
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5624866 
+|   |   |   |   |   |   |   |   |   [65] propLocalMax > 0.05735: n = 17379.9369959697
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6012123 
+|   |   |   |   |   |   |   |   [66] fitnessRank > 21
+|   |   |   |   |   |   |   |   |   [67] epistRSign <= 0.23203
+|   |   |   |   |   |   |   |   |   |   [68] nMut in 1, 4: n = 17234.5826052987
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6429512 
+|   |   |   |   |   |   |   |   |   |   [69] nMut in 2, 3, 5, 6, 7, 8: n = 24057.4954967736
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6261883 
+|   |   |   |   |   |   |   |   |   [70] epistRSign > 0.23203: n = 17344.1002122451
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5884097 
+|   |   |   [71] fitnessRank > 81
+|   |   |   |   [72] epistRSign <= 0.01007
+|   |   |   |   |   [73] gamma <= 0.56061: n = 23141.0765334573
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.6014423 
+|   |   |   |   |   [74] gamma > 0.56061
+|   |   |   |   |   |   [75] detect in small: n = 42376.4013818503
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.6894939 
+|   |   |   |   |   |   [76] detect in large, uniform: n = 36413.6455280221
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7112394 
+|   |   |   |   [77] epistRSign > 0.01007
+|   |   |   |   |   [78] detect in small
+|   |   |   |   |   |   [79] gamma <= 0.16301: n = 63373.032860252
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7825416 
+|   |   |   |   |   |   [80] gamma > 0.16301
+|   |   |   |   |   |   |   [81] numObservedPeaks <= 22
+|   |   |   |   |   |   |   |   [82] sample_size in 50: n = 19149.0437786109
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7525941 
+|   |   |   |   |   |   |   |   [83] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [84] epistRSign <= 0.02726: n = 17238.3373179458
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7289027 
+|   |   |   |   |   |   |   |   |   [85] epistRSign > 0.02726: n = 21176.1772597756
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7394568 
+|   |   |   |   |   |   |   [86] numObservedPeaks > 22: n = 27631.6077026613
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7675972 
+|   |   |   |   |   [87] detect in large, uniform
+|   |   |   |   |   |   [88] fitnessRank <= 180
+|   |   |   |   |   |   |   [89] sample_size in 50: n = 28862.1699265015
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7358531 
+|   |   |   |   |   |   |   [90] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [91] detect in large: n = 30531.9995087651
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7123134 
+|   |   |   |   |   |   |   |   [92] detect in uniform: n = 27194.9445189074
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.728908 
+|   |   |   |   |   |   [93] fitnessRank > 180
+|   |   |   |   |   |   |   [94] SSWM <= 0.84675: n = 28159.3242145287
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7397617 
+|   |   |   |   |   |   |   [95] SSWM > 0.84675
+|   |   |   |   |   |   |   |   [96] detect in large: n = 19801.8256243414
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7490475 
+|   |   |   |   |   |   |   |   [97] detect in uniform: n = 33308.7084822854
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7649367 
+|   |   [98] nMut in 0, 9
+|   |   |   [99] sample_size in 50
+|   |   |   |   [100] detect in large, small: n = 19057.7306515992
+|   |   |   |       (Intercept) 
+|   |   |   |         0.6170692 
+|   |   |   |   [101] detect in uniform: n = 24450.2588524282
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3392975 
+|   |   |   [102] sample_size in 200, 4000
+|   |   |   |   [103] nMut in 0
+|   |   |   |   |   [104] observedProp <= 0.0845: n = 17236.7352247405
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.355798 
+|   |   |   |   |   [105] observedProp > 0.0845: n = 26617.4641466681
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3873068 
+|   |   |   |   [106] nMut in 9
+|   |   |   |   |   [107] detect in large: n = 23799.8615894414
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3530758 
+|   |   |   |   |   [108] detect in small, uniform: n = 19751.0442182851
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |        0.09772789 
+|   [109] propLocalMax > 0.3162
+|   |   [110] fitnessRank <= 23
+|   |   |   [111] epistRSign <= 0.00139
+|   |   |   |   [112] detect in large: n = 17844.454333018
+|   |   |   |       (Intercept) 
+|   |   |   |         0.5939101 
+|   |   |   |   [113] detect in small, uniform: n = 23218.5337192343
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3033058 
+|   |   |   [114] epistRSign > 0.00139
+|   |   |   |   [115] propLocalMax <= 0.7543
+|   |   |   |   |   [116] numObservedPeaks <= 14: n = 27377.4779876101
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |          0.324301 
+|   |   |   |   |   [117] numObservedPeaks > 14: n = 25137.3063171182
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2309873 
+|   |   |   |   [118] propLocalMax > 0.7543: n = 21419.7696552316
+|   |   |   |       (Intercept) 
+|   |   |   |         0.1668418 
+|   |   [119] fitnessRank > 23
+|   |   |   [120] SSWM <= 0.92464
+|   |   |   |   [121] propLocalMax <= 0.76655
+|   |   |   |   |   [122] detect in large: n = 32180.7791945906
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.5160778 
+|   |   |   |   |   [123] detect in small, uniform
+|   |   |   |   |   |   [124] nMut in 1, 3: n = 20857.4782400021
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5110845 
+|   |   |   |   |   |   [125] nMut in 2, 4, 5, 6: n = 21983.8332700879
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.4742248 
+|   |   |   |   [126] propLocalMax > 0.76655: n = 38329.5603380263
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3452757 
+|   |   |   [127] SSWM > 0.92464
+|   |   |   |   [128] fitnessRank <= 72: n = 21898.0315911298
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2574672 
+|   |   |   |   [129] fitnessRank > 72: n = 17829.2097048159
+|   |   |   |       (Intercept) 
+|   |   |   |          0.398083 
+
+Number of inner nodes:    64
+Number of terminal nodes: 65
+Number of parameters per node: 1
+Objective function (residual sum of squares): 32507.3
+
+     done
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00241384 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.0032937 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00520752 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00238382 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00783428 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00553885 (tol = 0.002, component 1)
+7: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00219039 (tol = 0.002, component 1)
+8: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00601142 (tol = 0.002, component 1)
+9: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  :
+  Model failed to converge with max|grad| = 0.00421763 (tol = 0.002, component 1)
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00241384 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0032937 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00520752 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00238382 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00783428 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00553885 (tol = 0.002, component 1)
+7: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00219039 (tol = 0.002, component 1)
+8: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00601142 (tol = 0.002, component 1)
+9: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00421763 (tol = 0.002, component 1)
+
+
+ Fitting landscape =  allFL ; depth =  Inf . Object name =  lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_LBF_allFL_Inf
+
+ nrow data set =  1715676 
+
+    Using minsize =  17157 
+
+   sum of weights =  1715676 
+    user   system  elapsed 
+45820.47 79259.67 27062.54 
+
+Linear model tree
+
+Model formula:
+min_js ~ 1 | nMut + detect + sample_size + SSWM + gamma + epistRSign + 
+    numObservedPeaks + diff_obs_prop + observedProp + fitnessRank + 
+    propLocalMax + typeLandscape_f
+
+Fitted party:
+[1] root
+|   [2] propLocalMax <= 0.3162
+|   |   [3] nMut in 1, 2, 3, 4, 5, 6, 7, 8
+|   |   |   [4] fitnessRank <= 81
+|   |   |   |   [5] detect in large
+|   |   |   |   |   [6] sample_size in 50, 200
+|   |   |   |   |   |   [7] epistRSign <= 0.00278
+|   |   |   |   |   |   |   [8] sample_size in 50
+|   |   |   |   |   |   |   |   [9] SSWM <= 0.89152
+|   |   |   |   |   |   |   |   |   [10] gamma <= 0.53444: n = 27376.1975501835
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8935956 
+|   |   |   |   |   |   |   |   |   [11] gamma > 0.53444: n = 17450.0424914979
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.8376862 
+|   |   |   |   |   |   |   |   [12] SSWM > 0.89152: n = 20087.3786346927
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.9442799 
+|   |   |   |   |   |   |   [13] sample_size in 200
+|   |   |   |   |   |   |   |   [14] gamma <= 0.46261: n = 32248.7475348971
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.8147539 
+|   |   |   |   |   |   |   |   [15] gamma > 0.46261: n = 32668.0876992636
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6967736 
+|   |   |   |   |   |   [16] epistRSign > 0.00278
+|   |   |   |   |   |   |   [17] epistRSign <= 0.01311: n = 33666.194858984
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6922052 
+|   |   |   |   |   |   |   [18] epistRSign > 0.01311
+|   |   |   |   |   |   |   |   [19] nMut in 4, 5, 6, 7: n = 28780.0270820257
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6199115 
+|   |   |   |   |   |   |   |   [20] nMut in 1, 2, 3, 8: n = 30581.6829551923
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5868343 
+|   |   |   |   |   [21] sample_size in 4000
+|   |   |   |   |   |   [22] gamma <= 0.54123
+|   |   |   |   |   |   |   [23] epistRSign <= 0.0013: n = 37732.4806131969
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.5154569 
+|   |   |   |   |   |   |   [24] epistRSign > 0.0013
+|   |   |   |   |   |   |   |   [25] epistRSign <= 0.225: n = 17162.6244961992
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6018146 
+|   |   |   |   |   |   |   |   [26] epistRSign > 0.225: n = 17877.7054991372
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.5728223 
+|   |   |   |   |   |   [27] gamma > 0.54123
+|   |   |   |   |   |   |   [28] fitnessRank <= 24: n = 21463.9354679171
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.596467 
+|   |   |   |   |   |   |   [29] fitnessRank > 24: n = 17196.4447456191
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6263503 
+|   |   |   |   [30] detect in small, uniform
+|   |   |   |   |   [31] epistRSign <= 0.00174
+|   |   |   |   |   |   [32] gamma <= 0.54168
+|   |   |   |   |   |   |   [33] sample_size in 50
+|   |   |   |   |   |   |   |   [34] gamma <= 0.3586: n = 30311.0003389161
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |           0.51445 
+|   |   |   |   |   |   |   |   [35] gamma > 0.3586
+|   |   |   |   |   |   |   |   |   [36] gamma <= 0.4582: n = 36977.2019164581
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5870183 
+|   |   |   |   |   |   |   |   |   [37] gamma > 0.4582: n = 20527.5769391678
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5423065 
+|   |   |   |   |   |   |   [38] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [39] gamma <= 0.34502
+|   |   |   |   |   |   |   |   |   [40] sample_size in 200: n = 24597.7596768529
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |          0.339045 
+|   |   |   |   |   |   |   |   |   [41] sample_size in 4000: n = 24598.733922721
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.2959833 
+|   |   |   |   |   |   |   |   [42] gamma > 0.34502
+|   |   |   |   |   |   |   |   |   [43] gamma <= 0.41422
+|   |   |   |   |   |   |   |   |   |   [44] sample_size in 200: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.4517725 
+|   |   |   |   |   |   |   |   |   |   [45] sample_size in 4000: n = 26118.542012679
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |          0.402417 
+|   |   |   |   |   |   |   |   |   [46] gamma > 0.41422: n = 74206.2788646727
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |           0.49285 
+|   |   |   |   |   |   [47] gamma > 0.54168
+|   |   |   |   |   |   |   [48] gamma <= 0.60698
+|   |   |   |   |   |   |   |   [49] sample_size in 50: n = 18050.7965150298
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6210321 
+|   |   |   |   |   |   |   |   [50] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [51] observedProp <= 0.04575: n = 17922.7094725537
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5984267 
+|   |   |   |   |   |   |   |   |   [52] observedProp > 0.04575: n = 18178.8835575058
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5651482 
+|   |   |   |   |   |   |   [53] gamma > 0.60698: n = 37424.263241826
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.656226 
+|   |   |   |   |   [54] epistRSign > 0.00174
+|   |   |   |   |   |   [55] detect in small
+|   |   |   |   |   |   |   [56] epistRSign <= 0.00634: n = 45823.1904777362
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6411866 
+|   |   |   |   |   |   |   [57] epistRSign > 0.00634
+|   |   |   |   |   |   |   |   [58] propLocalMax <= 5e-05: n = 34124.622386146
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7070531 
+|   |   |   |   |   |   |   |   [59] propLocalMax > 5e-05: n = 17870.1373098066
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.6507582 
+|   |   |   |   |   |   [60] detect in uniform
+|   |   |   |   |   |   |   [61] observedProp <= 0.01: n = 17879.5271842683
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.6577028 
+|   |   |   |   |   |   |   [62] observedProp > 0.01
+|   |   |   |   |   |   |   |   [63] fitnessRank <= 21
+|   |   |   |   |   |   |   |   |   [64] propLocalMax <= 0.05735: n = 17290.7455599595
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5624865 
+|   |   |   |   |   |   |   |   |   [65] propLocalMax > 0.05735: n = 17379.9369959697
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.6012122 
+|   |   |   |   |   |   |   |   [66] fitnessRank > 21
+|   |   |   |   |   |   |   |   |   [67] epistRSign <= 0.23203
+|   |   |   |   |   |   |   |   |   |   [68] nMut in 1, 4: n = 17234.5826052987
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6429511 
+|   |   |   |   |   |   |   |   |   |   [69] nMut in 2, 3, 5, 6, 7, 8: n = 24057.4954967736
+|   |   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |   |         0.6261882 
+|   |   |   |   |   |   |   |   |   [70] epistRSign > 0.23203: n = 17344.1002122451
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.5884096 
+|   |   |   [71] fitnessRank > 81
+|   |   |   |   [72] epistRSign <= 0.01007
+|   |   |   |   |   [73] gamma <= 0.56061: n = 23141.0765334573
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.6014422 
+|   |   |   |   |   [74] gamma > 0.56061
+|   |   |   |   |   |   [75] detect in small: n = 42376.4013818503
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.6894936 
+|   |   |   |   |   |   [76] detect in large, uniform: n = 36413.6455280221
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7112391 
+|   |   |   |   [77] epistRSign > 0.01007
+|   |   |   |   |   [78] detect in small
+|   |   |   |   |   |   [79] gamma <= 0.16301: n = 63373.032860252
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.7825415 
+|   |   |   |   |   |   [80] gamma > 0.16301
+|   |   |   |   |   |   |   [81] numObservedPeaks <= 22
+|   |   |   |   |   |   |   |   [82] sample_size in 50: n = 19149.0437786109
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |          0.752594 
+|   |   |   |   |   |   |   |   [83] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   |   [84] epistRSign <= 0.02726: n = 17238.3373179458
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7289026 
+|   |   |   |   |   |   |   |   |   [85] epistRSign > 0.02726: n = 21176.1772597756
+|   |   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |   |         0.7394567 
+|   |   |   |   |   |   |   [86] numObservedPeaks > 22: n = 27631.6077026613
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7675971 
+|   |   |   |   |   [87] detect in large, uniform
+|   |   |   |   |   |   [88] fitnessRank <= 180
+|   |   |   |   |   |   |   [89] sample_size in 50: n = 28862.1699265015
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |          0.735853 
+|   |   |   |   |   |   |   [90] sample_size in 200, 4000
+|   |   |   |   |   |   |   |   [91] detect in large: n = 30531.9995087651
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7123133 
+|   |   |   |   |   |   |   |   [92] detect in uniform: n = 27194.9445189074
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7289079 
+|   |   |   |   |   |   [93] fitnessRank > 180
+|   |   |   |   |   |   |   [94] SSWM <= 0.84675: n = 28159.3242145287
+|   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |         0.7397616 
+|   |   |   |   |   |   |   [95] SSWM > 0.84675
+|   |   |   |   |   |   |   |   [96] detect in large: n = 19801.8256243414
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7490474 
+|   |   |   |   |   |   |   |   [97] detect in uniform: n = 33308.7084822854
+|   |   |   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |   |   |         0.7649366 
+|   |   [98] nMut in 0, 9
+|   |   |   [99] sample_size in 50
+|   |   |   |   [100] detect in large, small: n = 19057.7306515992
+|   |   |   |       (Intercept) 
+|   |   |   |         0.6170692 
+|   |   |   |   [101] detect in uniform: n = 24450.2588524282
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3392974 
+|   |   |   [102] sample_size in 200, 4000
+|   |   |   |   [103] nMut in 0
+|   |   |   |   |   [104] observedProp <= 0.0845: n = 17236.7352247405
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3557979 
+|   |   |   |   |   [105] observedProp > 0.0845: n = 26617.4641466681
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3873067 
+|   |   |   |   [106] nMut in 9
+|   |   |   |   |   [107] detect in large: n = 23799.8615894414
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3530757 
+|   |   |   |   |   [108] detect in small, uniform: n = 19751.0442182851
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |        0.09772781 
+|   [109] propLocalMax > 0.3162
+|   |   [110] fitnessRank <= 23
+|   |   |   [111] epistRSign <= 0.00139
+|   |   |   |   [112] detect in large: n = 17844.454333018
+|   |   |   |       (Intercept) 
+|   |   |   |         0.5939103 
+|   |   |   |   [113] detect in small, uniform: n = 23218.5337192343
+|   |   |   |       (Intercept) 
+|   |   |   |          0.303306 
+|   |   |   [114] epistRSign > 0.00139
+|   |   |   |   [115] propLocalMax <= 0.7543
+|   |   |   |   |   [116] numObservedPeaks <= 14: n = 27377.4779876101
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.3243009 
+|   |   |   |   |   [117] numObservedPeaks > 14: n = 25137.3063171182
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.2309873 
+|   |   |   |   [118] propLocalMax > 0.7543: n = 21419.7696552316
+|   |   |   |       (Intercept) 
+|   |   |   |         0.1668419 
+|   |   [119] fitnessRank > 23
+|   |   |   [120] SSWM <= 0.92464
+|   |   |   |   [121] propLocalMax <= 0.76655
+|   |   |   |   |   [122] detect in large: n = 32180.7791945906
+|   |   |   |   |       (Intercept) 
+|   |   |   |   |         0.5160779 
+|   |   |   |   |   [123] detect in small, uniform
+|   |   |   |   |   |   [124] nMut in 1, 3: n = 20857.4782400021
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.5110845 
+|   |   |   |   |   |   [125] nMut in 2, 4, 5, 6: n = 21983.8332700879
+|   |   |   |   |   |       (Intercept) 
+|   |   |   |   |   |         0.4742249 
+|   |   |   |   [126] propLocalMax > 0.76655: n = 38329.5603380263
+|   |   |   |       (Intercept) 
+|   |   |   |         0.3452761 
+|   |   |   [127] SSWM > 0.92464
+|   |   |   |   [128] fitnessRank <= 72: n = 21898.0315911298
+|   |   |   |       (Intercept) 
+|   |   |   |         0.2574672 
+|   |   |   |   [129] fitnessRank > 72: n = 17829.2097048159
+|   |   |   |       (Intercept) 
+|   |   |   |          0.398083 
+
+Number of inner nodes:    64
+Number of terminal nodes: 65
+Number of parameters per node: 1
+Objective function (residual sum of squares): 32507.3
+
+     done
+There were 14 warnings (use warnings() to see them)
+Warning messages:
+1: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00340628 (tol = 0.002, component 1)
+2: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00276775 (tol = 0.002, component 1)
+3: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00328632 (tol = 0.002, component 1)
+4: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00351348 (tol = 0.002, component 1)
+5: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00281993 (tol = 0.002, component 1)
+6: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00277472 (tol = 0.002, component 1)
+7: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00258866 (tol = 0.002, component 1)
+8: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0288465 (tol = 0.002, component 1)
+9: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00449588 (tol = 0.002, component 1)
+10: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00233895 (tol = 0.002, component 1)
+11: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00397162 (tol = 0.002, component 1)
+12: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00330349 (tol = 0.002, component 1)
+13: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.0111511 (tol = 0.002, component 1)
+14: In checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv,  ... :
+  Model failed to converge with max|grad| = 0.00262993 (tol = 0.002, component 1)
+[1] "Fri Sep 11 04:33:30 2020"

@@ -1,0 +1,519 @@
+[1] "Wed Sep 16 03:07:59 2020"
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: boot
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+
+Attaching package: ‘igraph’
+
+The following objects are masked from ‘package:dplyr’:
+
+    as_data_frame, groups, union
+
+The following objects are masked from ‘package:stats’:
+
+    decompose, spectrum
+
+The following object is masked from ‘package:base’:
+
+    union
+
+Loading required package: iterators
+Loading required package: graph
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:igraph’:
+
+    normalize, path, union
+
+The following objects are masked from ‘package:dplyr’:
+
+    combine, intersect, setdiff, union
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+    dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+    union, unique, unsplit, which, which.max, which.min
+
+
+Attaching package: ‘graph’
+
+The following objects are masked from ‘package:igraph’:
+
+    degree, edges, intersection
+
+Loading required package: grid
+
+Attaching package: ‘stringr’
+
+The following object is masked from ‘package:graph’:
+
+    boundary
+
+Registered S3 method overwritten by 'pryr':
+  method      from
+  print.bytes Rcpp
+
+Attaching package: ‘pryr’
+
+The following object is masked from ‘package:igraph’:
+
+    compose
+
+The following object is masked from ‘package:data.table’:
+
+    address
+
+
+Attaching package: ‘testthat’
+
+The following object is masked from ‘package:igraph’:
+
+    compare
+
+The following object is masked from ‘package:dplyr’:
+
+    matches
+
+
+Attaching package: ‘gtools’
+
+The following object is masked from ‘package:igraph’:
+
+    permute
+
+The following objects are masked from ‘package:boot’:
+
+    inv.logit, logit
+
+Loading required package: inline
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:14 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:14 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:14 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:14 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:14 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:14 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:14 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:15 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:15 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:15 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:16 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:17 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:17 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:18 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:18 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:18 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:19 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:19 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:20 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:20 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:20 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:20 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:20 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:20 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:21 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:21 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Data.to.pD  Wed Sep 16 03:08:22 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:08:22 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:08:22 2020 
+Loading required package: R.utils
+Loading required package: R.oo
+Loading required package: R.methodsS3
+R.methodsS3 v1.8.0 (2020-02-14 07:10:20 UTC) successfully loaded. See ?R.methodsS3 for help.
+R.oo v1.23.0 successfully loaded. See ?R.oo for help.
+
+Attaching package: ‘R.oo’
+
+The following object is masked from ‘package:R.methodsS3’:
+
+    throw
+
+The following object is masked from ‘package:testthat’:
+
+    equals
+
+The following object is masked from ‘package:TRONCO’:
+
+    trim
+
+The following object is masked from ‘package:igraph’:
+
+    hierarchy
+
+The following object is masked from ‘package:compiler’:
+
+    compile
+
+The following objects are masked from ‘package:methods’:
+
+    getClasses, getMethods
+
+The following objects are masked from ‘package:base’:
+
+    attach, detach, load, save
+
+R.utils v2.9.2 successfully loaded. See ?R.utils for help.
+
+Attaching package: ‘R.utils’
+
+The following object is masked from ‘package:gtools’:
+
+    capture
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+The following objects are masked from ‘package:base’:
+
+    cat, commandArgs, getOption, inherits, isOpen, nullfile, parse,
+    warnings
+
+Loading required package: MASS
+
+Attaching package: ‘MASS’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Loading required package: relations
+Registered S3 method overwritten by 'sets':
+  method        from   
+  print.element ggplot2
+
+Attaching package: ‘relations’
+
+The following object is masked from ‘package:dplyr’:
+
+    sym
+
+
+     Doing OT
+     Doing CAPRESE
+     Doing CAPRI_BIC
+     Doing CAPRI_AIC
+     Doing CBN
+ Exporting OMP_threads from call.external.cbn. OMP_NUM_THREADS =  1 
+
+     Doing MCCBN
+                  _times_cpm: ot 0.064  cbn  0.333  mccbn  0.594  caprese  0.105  capri_aic  0.11  capri_bic  0.148 
+
+     Doing OT
+     Doing CAPRESE
+     Doing CAPRI_BIC
+     Doing CAPRI_AIC
+     Doing CBN
+ Exporting OMP_threads from call.external.cbn. OMP_NUM_THREADS =  1 
+
+     Doing MCCBN
+                  _times_cpm: ot 0.008  cbn  0.421  mccbn  0.432  caprese  0.015  capri_aic  0.14  capri_bic  0.155 
+
+     Doing OT
+     Doing CAPRESE
+     Doing CAPRI_BIC
+     Doing CAPRI_AIC
+     Doing CBN
+ Exporting OMP_threads from call.external.cbn. OMP_NUM_THREADS =  1 
+
+     Doing MCCBN
+                  _times_cpm: ot 0.016  cbn  0.494  mccbn  0.315  caprese  0.013  capri_aic  0.195  capri_bic  0.158 
+
+     Doing OT
+     Doing CAPRESE
+     Doing CAPRI_BIC
+     Doing CAPRI_AIC
+     Doing CBN
+ Exporting OMP_threads from call.external.cbn. OMP_NUM_THREADS =  1 
+
+     Doing MCCBN
+                  _times_cpm: ot 0.005  cbn  0.535  mccbn  0.24  caprese  0.016  capri_aic  0.135  capri_bic  0.134 
+[1] 817  10
+[1] 570  11
+[1] 251  12
+[1] 261  20
+[1] "OBSCN(M)"   "CNTNAP2(M)" "LRP2(M)"    "TP53(D)"    "PAOX(M)"   
+[1] FALSE
+$GBM_coo
+[1] 3
+
+$BRCA_he_s
+[1] 4
+
+$BRCA_ba_s
+[1] 6
+
+$Pan_ge
+[1] 7
+
+$Pan_pa
+[1] 7
+
+$Ov_CNV
+[1] 7
+
+$Col_ge
+[1] 8
+
+$GBM_ge
+[1] 8
+
+$Ov_drv
+[1] 9
+
+$GBM_mo
+[1] 9
+
+$Col_pa
+[1] 10
+
+$GBM_pa
+[1] 10
+
+$breast_schill
+[1] 10
+
+$ACML_co
+[1] 11
+
+$colon_schill
+[1] 11
+
+$all_pa
+[1] 12
+
+$renal_schill
+[1] 12
+
+$Col_mss_co
+[1] 13
+
+$gliob_schill_15
+[1] 15
+
+$ACML
+[1] 16
+
+$Col_msi_co
+[1] 20
+
+$gliob_schill
+[1] 20
+
+$Col_msi
+[1] 30
+
+$Col_mss
+[1] 34
+
+$GBM_CNA
+[1] 48
+
+$Lu
+[1] 51
+
+$Ov
+[1] 192
+
+ [1] "GBM_coo"         "BRCA_he_s"       "BRCA_ba_s"       "Pan_ge"         
+ [5] "Pan_pa"          "Ov_CNV"          "Col_ge"          "GBM_ge"         
+ [9] "Ov_drv"          "GBM_mo"          "Col_pa"          "GBM_pa"         
+[13] "breast_schill"   "ACML_co"         "colon_schill"    "all_pa"         
+[17] "renal_schill"    "Col_mss_co"      "gliob_schill_15" "ACML"           
+[21] "Col_msi_co"      "gliob_schill"    "Col_msi"         "Col_mss"        
+[25] "GBM_CNA"         "Lu"              "Ov"             
+
+ What R thinks about number of threads/processes
+[1] 36
+[1] 36
+[1] 20
+[1] 36
+[1] 20
+
+##############################################
+
+ Doing dataset   22  named  gliob_schill  with cores  20  with max genes 15 
+
+  Number of genes before limiting =  20
+  Number of genes after limiting =  15 
+
+     Doing MHN
+      MHN: done Data.to.pD  Wed Sep 16 03:08:42 2020 
+
+      MHN: done Learn.MHN  Wed Sep 16 03:10:00 2020 
+
+      MHN: done theta_to_trans_rate_3_SM  Wed Sep 16 03:23:35 2020 
+
+  time MHN =  1185.441
+     Doing OT
+     Doing CAPRESE
+     Doing CAPRI_BIC
+     Doing CAPRI_AIC
+     Doing CBN
+ Exporting OMP_threads from call.external.cbn. OMP_NUM_THREADS =  20 
+
+     Doing MCCBN
+                  _times_cpm: ot 0.096  cbn  62308.75  mccbn  14.324  caprese  0.035  capri_aic  1.027  capri_bic  0.982 
+
+    getting transition matrices for all non-mhn methods 
+ Total time =  64002.72
+ Done 
+[1] "Wed Sep 16 20:55:25 2020"
