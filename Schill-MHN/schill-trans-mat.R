@@ -32,8 +32,15 @@ library(gtools)
 ##          Figure 2, left.
 
 do_MHN <- function(x,  lambda = 1/nrow(x)) {
-    ## lambda 0.01 is what they use by default (see bioRxiv, p. 7);
-    ## Nope, it is 1/nrow(x). See paper and emails.
+    ## lambda 0.01 is what they use by default in their bioRxiv, p. 7 paper.
+    ## In the paper it is 1/nrow(x). See paper and emails.
+    ## What we did: for simulations we used lambda = 0.01.
+    ## (see, e.g., function mhn_on_split, in file run-Schill-MHN-trans-mat.R)
+    ## but for biological data we used lambda = 1/nrow(x).
+    ## Differences are often minor. lmabda = 0.01 seems an easier setting
+    ## for reproducibility with simulations since number of features
+    ## can actually change in sampled data sets.
+    ## See Suppl Mat.
     mhnd <- Data.to.pD(x)
     cat("\n      MHN: done Data.to.pD ", date(), "\n")
     theta <- Learn.MHN(mhnd, lambda = lambda)
