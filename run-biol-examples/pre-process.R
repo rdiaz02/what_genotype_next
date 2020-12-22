@@ -33,8 +33,8 @@ merge_all_dups <- function(x) {
     return(x)
 }
 
-## FIXME: use another
-## FIXME : use another character, not a "_". Something like "@@!" or something
+## In the future:
+## use another character, not a "_". Something like "@@!" or something
 ## that will be unique, for whose pressence we test before starting, and
 ## that will also be used in the unfusing code.
 merge_the_ident <- function(x, column) {

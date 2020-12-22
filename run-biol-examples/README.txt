@@ -18,18 +18,12 @@
     run-all-biol-examples-max-genes-15.R, that limits runs to the first 15
     genes. (But see below for Schill's gliobl.)
 
-    The code in run-all-biol-examples-max-genes-15.R is basically the same
-  as in run-all-biol-examples-cores-cbn.R, except for adding "max genes
-  genes 15" in the cat's and _max_genes_15 in the RData. And they also
-  differ in that -15.R renamed genes (see below).
 
-  Both differ in which file they source (code-all-methods-2-trans-matrix.R
-  and code-all-methods-2-trans-matrix-max-genes-15.R). The code in
-  code-all-methods-2-trans-matrix.R and
-  code-all-methods-2-trans-matrix-max-genes-15.R is basically the same
-  except for using a max number of 20 or 15 genes.
-
-  So datasets 20 to 27 are all trimmed to have 15 columns.
+    This file sources code-all-methods-2-trans-matrix-max-genes-15.R which
+  limits the number of genes to 15 (if > 15 genes, we use the 15 most
+  frequent genes; this is done by the function pre_process in the
+  pre-process.R file). So datasets 20 to 27 are all trimmed to have 15
+  columns.
 
 
   - We had to rename gene names because of CAPRESE and CAPRI. This is done
