@@ -1,32 +1,11 @@
 
 # Code for "Conditional prediction of consecutive tumor evolution using cancer progression models: What genotype comes next?"
-FIXME: give URL of paper in bioRxiv
 
+## Juan Diaz-Colunga, Ramon Diaz-Uriarte	
+## Preprint at bioRxiv: https://biorxiv.org/cgi/content/short/2020.12.16.423099v1	
 
-<!-- We are addressing the performance of Cancer Progression Models (CPMs) as -->
-<!-- tools to predict cancer evolution. Even if their accuracy when evaluating -->
-<!-- complete evolutionary trajectories can be limited by a series of factors, -->
-<!-- they could still be useful when it comes to reconstructing subsets of said -->
-<!-- trajectories. -->
+----------------------------------------------------------------------------------
 
-<!-- Thus, the question we are focusing on is the following: suppose that, at a -->
-<!-- certain time, we have been able to identify the most abundant genotype in -->
-<!-- a tumor, say _g<sub>n</sub>_ (where the subscript indicates _n_ mutated -->
-<!-- driver genes). Which genotype with _n_+1 mutated drivers is expected to -->
-<!-- arise next in the trajectory? -->
-
-<!-- Note that the sequence of most abundant genotypes (path of maximums, POM) -->
-<!-- doesn't necessarily have to match the sequence of ancestors of the -->
-<!-- ultimately fixated genotype (line of descent, LOD). A better defined -->
-<!-- version of our question would be: given an observed genotype with _n_ -->
-<!-- mutations in the POM, what is the probability for each of all possible -->
-<!-- genotypes with _n_+1 mutations to be in the LOD? -->
-
-<!-- To tackle this question, we are using a collection of simulated datasets -->
-<!-- generated using the [OncoSimulR -->
-<!-- package](https://bioconductor.org/packages/release/bioc/html/OncoSimulR.html). We -->
-<!-- are studying the predictions of various CPMs and comparing them to the -->
-<!-- actual evolutionary trajectories in the simulations. -->
 
 ## Main scripts and directories
 
@@ -227,9 +206,6 @@ the cancer data sets (main manuscript and supplementary material).
 For questions or comments, please contact 
 [J. Diaz-Colunga](mailto:juan.diazcolunga@yale.edu) or [R. Diaz-Uriarte](mailto:r.diaz@uam.es).
 
-<!-- This repository is currently maintained by [Juan -->
-<!-- Díaz-Colunga](jdiazc9.github.io). For questions or comments, please -->
-<!-- contact by [mail](mailto:juan.diazc@uam.es) or [mail](mailto:r.diaz@uam.es). -->
 
 
 

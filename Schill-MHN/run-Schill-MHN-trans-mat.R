@@ -107,7 +107,11 @@ mhn_on_split <- function(y, string = NULL) {
 
 
     if(ncol(x_tmp) >= 2) {
-        time_mhn <- system.time(MHN <- try(do_MHN(x_tmp, lambda = 1/nrow(x_tmp))))["elapsed"]
+        ## Recall: lambda = 0.01 for simulated data, 1/nrow(x) for biol. data
+        ## See suppl. mat.
+        ## Slightly arbitrary. Lambda often only makes minor differences.
+        time_mhn <- system.time(MHN <- try(do_MHN(x_tmp, lambda = 0.01)))["elapsed"]
+        ## time_mhn <- system.time(MHN <- try(do_MHN(x_tmp, lambda = 1/nrow(x_tmp))))["elapsed"]
     } else {
         time_mhn <- NA
         cat("\n         Cannot run:  ncol < 2   \n")
