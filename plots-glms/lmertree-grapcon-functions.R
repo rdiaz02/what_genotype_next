@@ -240,7 +240,8 @@ my_node_bp5 <- function(obj, col = "black", fill = "lightgray",
         yscale <- c(0, 1) + c(-0.1, 0.1) * diff(range(c(0, 1)))
         is_best_data <- terminal_plot_data[[item_in_data]]$is_best
 
-        
+      ## Yes: we do a plot of the weighted means of the JS for each method
+      ## in case we are using "js" (show_bottom = "js")
         if(!is.null(terminal_plot_data[[item_in_data]]$weights)) {
             ## cat("\n   doing weighted df for barplot")
             tmpb <- as.matrix(is_best_data)
@@ -412,7 +413,8 @@ my_node_bp5 <- function(obj, col = "black", fill = "lightgray",
                 if(show_bottom == "rank")
                     ggp1 <- ggp1 + ylim(1, 13) ## + scale_y_reverse(limits = c(13, 1))
                 if(show_bottom == "js")
-                    ggp1 <- ggp1 + ylim(0, 1) ## + scale_y_reverse(limits = c(1, 0))
+                  ggp1 <- ggp1 + ylim(0, 1) ## + scale_y_reverse(limits = c(1, 0))
+                ## Yes, it is the weighted mean
             }
 
             ggp1 <- ggp1 +

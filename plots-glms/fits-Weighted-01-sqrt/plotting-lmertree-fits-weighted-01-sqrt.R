@@ -11,7 +11,7 @@ old <- theme_set(theme_cowplot())
 
 ## Load data for plots
 ## created in /plots-glms/data_for_weighted_glmertree_plots.R
-load("../data_for_weighted_glmertree_plots.RData")
+load("../data_for_weighted_glmertree_plots.RData.gz")
 gc()
 dim(data_for_weighted_glmertree_plots) ## 2389559     108
 
@@ -53,17 +53,17 @@ data_for_all_weighted_7 <-
 
 ## Load fitted glmertrees
 
-load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_7genes_gamma_epist_withFL_Inf_NM_fits.RData")
+load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_7genes_gamma_epist_withFL_Inf_NM_fits.RData.gz")
 W_specific_7 <- lmertree_sqrt_W_Obs_minsize_01_fl_specific_7genes_gamma_epist_withFL_Inf_NM_allFL_Inf
 
 
-load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_fits.RData")
+load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_fits.RData.gz")
 W_specific_10 <- lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_allFL_Inf
 
-load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_7genes_Inf_NM_fits.RData")
+load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_7genes_Inf_NM_fits.RData.gz")
 W_all_7 <- get("lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_7genes_Inf_NM_allFL_Inf")
 
-load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_fits.RData")
+load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_fits.RData.gz")
 W_all_10 <- get("lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_allFL_Inf")
 
 
@@ -226,9 +226,10 @@ W_all_10_prunedb_sq <- fast_prune_sqrt(W_all_10$tree, maxFit = 0.06773060,
 ## For faster loading 
 save(file = "pruned_trees_sqrt.RData", list = ls(pattern = glob2rx("W_*_prunedb_sq")),
      compress = FALSE)
+## compress it for permanent storage
 }
 
-load("pruned_trees_sqrt.RData")
+load("pruned_trees_sqrt.RData.gz")
 
 
 scatterplot_median_intercept(W_specific_7_prunedb_sq, TRUE, plot = FALSE)
@@ -321,7 +322,7 @@ minint <- lapply(list_fits, function(x) {
 
 lapply(minint, function(x) x^2)
 
-
+q()
 
 
 ## [[1]]
