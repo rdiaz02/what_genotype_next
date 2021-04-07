@@ -17,7 +17,13 @@ mccbn_proc <- function(x) {
                      dfr[, "To"],
                      sep = " -> ")
     ## of course, lambda is per child
-    lambda <- fit$fits[[mle_index]]$par
+
+    ## if using MC-CBN pre 2020-10-07 
+    ## lambda <- fit$fits[[mle_index]]$par
+
+    ## if using MC-CBN post 2020-10-07 
+    lambda <- fit$fits[[mle_index]]$lambda
+
     names(lambda) <- colnames(am)
     dfr$lambda <- lambda[dfr$To]
     return(list(edges = dfr))
