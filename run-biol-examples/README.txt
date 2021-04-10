@@ -2,6 +2,8 @@
   directory Schill-MHN/MHN. We used a symlink. (Not sure what this will do under
   Windows). We source Schill et al.'s MHN code.
 
+  File schill-trans-mat.R is, also the same (in our case a symlink) to the file
+  with the same name under ./Schill-MHN
 
 
 - We run all the methods on the following data sets:
