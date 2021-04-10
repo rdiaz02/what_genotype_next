@@ -1,3 +1,9 @@
+- Subdirectory MHN: this subdirectoy should contain the files under the
+  directory Schill-MHN/MHN. We used a symlink. (Not sure what this will do under
+  Windows). We source Schill et al.'s MHN code.
+
+
+
 - We run all the methods on the following data sets:
 
   - The RData is the same as file all_biol_example_data.RData, in
