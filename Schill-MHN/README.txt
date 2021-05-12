@@ -8,8 +8,8 @@ About the files under the Schill-MHN directory
    We have not added it to this repository since there is no license file
    in that repo.
 
-   The version we used was downloaded in January 2020; as of 2020-11-18,
-   that repository was last updated was on 2018-08-16.
+   The version we used was downloaded in January 2020; as of 2021-05-12,
+   that repository was last updated on 2018-08-16.
 
    So clone that repository and leave it as MHN subirectory under this
    directory. (e.g, ~/what_genotype_next/Schill-MHN/MHN) as several of the
