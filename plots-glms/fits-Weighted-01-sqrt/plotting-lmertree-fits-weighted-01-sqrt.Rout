@@ -1,4 +1,3 @@
-nohup: ignoring input
 Loading required package: grid
 Loading required package: libcoin
 Loading required package: mvtnorm
@@ -21,6 +20,16 @@ Warning messages:
 3: In rm(my_node_empty) : object 'my_node_empty' not found
 4: In rm(my_node_bp_original) : object 'my_node_bp_original' not found
 Loading required package: spatstat.data
+Loading required package: spatstat.geom
+spatstat.geom 2.2-2
+
+Attaching package: ‘spatstat.geom’
+
+The following object is masked from ‘package:data.table’:
+
+    shift
+
+Loading required package: spatstat.core
 Loading required package: nlme
 
 Attaching package: ‘nlme’
@@ -34,24 +43,18 @@ The following object is masked from ‘package:lme4’:
     lmList
 
 Loading required package: rpart
+spatstat.core 2.3-0
+Loading required package: spatstat.linnet
+spatstat.linnet 2.3-0
 
-spatstat 1.64-1       (nickname: ‘Help you I can, yes!’) 
+spatstat 2.2-0       (nickname: ‘That's not important right now’) 
 For an introduction to spatstat, type ‘beginner’ 
-
-
-Note: spatstat version 1.64-1 is out of date by more than 9 months; we recommend upgrading to the latest version.
-
-Attaching package: ‘spatstat’
-
-The following object is masked from ‘package:data.table’:
-
-    shift
 
 Loading required package: lattice
 
 Attaching package: ‘lattice’
 
-The following object is masked from ‘package:spatstat’:
+The following object is masked from ‘package:spatstat.core’:
 
     panel.histogram
 
@@ -65,17 +68,9 @@ The following objects are masked from ‘package:base’:
 
     format.pval, units
 
-
-********************************************************
-Note: As of version 1.0.0, cowplot does not change the
-  default ggplot2 theme anymore. To recover the previous
-  behavior, execute:
-  theme_set(theme_cowplot())
-********************************************************
-
             used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   2058330  110.0    4134971  220.9   2625080  140.2
-Vcells 222037634 1694.1  268990364 2052.3 222038762 1694.1
+Ncells   2090807  111.7    4220665  225.5   2616022  139.8
+Vcells 222083704 1694.4  269056706 2052.8 222084832 1694.4
 [1] 2389559     108
                typeLandscape
 typeLandscape_f Represent. Local maxima    RMF
@@ -794,8 +789,8 @@ nrb - n
  node  15
  node  19
  node  21Warning messages:
-1: Removed 3 rows containing missing values (geom_point). 
-2: Removed 3 rows containing missing values (geom_point). 
+1: Removed 2 rows containing missing values (geom_point). 
+2: Removed 2 rows containing missing values (geom_point). 
 [[1]]
 [1] 0.009550728
 
