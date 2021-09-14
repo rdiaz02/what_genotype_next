@@ -17,6 +17,7 @@
 library(matrixStats)
 library(parallel)
 library(spatstat) ## weighted stuff
+library(spatstat.geom) ## Where weighted.quantile now is
 library(Hmisc) ## wtd.quantile
 
 ## What a hack!!
@@ -41,7 +42,7 @@ weighted_summary_data2 <- function(data,
     x <- data$min_js
     w <- data$sampledProp
     if(sqrt_inv) x <- x^2
-    spatstat::weighted.quantile(x, w,
+    spatstat.geom::weighted.quantile(x, w,
                                 probs = probs)
 }
 
