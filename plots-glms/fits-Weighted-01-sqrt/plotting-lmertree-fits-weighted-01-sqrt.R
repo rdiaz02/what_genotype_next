@@ -260,6 +260,22 @@ all_vars <- c("MHN"
               )
 
 
+all_vars_except_uw <- c("MHN"
+                      , "MHN_td"
+                      , "CBN"
+                      , "CAPRESE"
+                      , "OT"
+                      , "CBN_td"
+                      , "MCCBN"
+                      , "CAPRI_BIC"
+                      , "CAPRI_AIC"
+                      ## , "OT_uw"
+                      , "MCCBN_td"
+                      ## , "MCCBN_uw"
+                      ## , "CBN_uw"
+              )
+
+
 ## Yes, weighted boxplots and means.
 ##    weighted argument passed to created_terminal_plot_data_2
 ##    which returns a vector of weights
@@ -270,42 +286,97 @@ all_vars <- c("MHN"
 ##     we pass the sqrt_transf = TRUE
 ##     used by my_node_bp5
 ##     if(sqrt_transf) yn <- yn^2
+
+
+
+
+
+## Following reviewer's request, we produce figures excluding the unweighted,
+## to unclutter. Figures with all methods are also provided in the suppl mat.
+
 data_and_plot(W_specific_7_prunedb_sq,
               data_for_specific_weighted_7, 76085L,
-              main = "weighted-7-specific-no-split-01-sqrt-all_methods-js",
+              main = "weighted-7-specific-no-split-01-sqrt-all_methods_except_uw-js",
               weighted = TRUE,
               size_y_text = 8,
               height = 22,
               ## width = 30,
-              best_vars = all_vars,
+              best_vars = all_vars_except_uw,
               sqrt_transf  = TRUE, show_bottom = "js")
 data_and_plot(W_specific_10_prunedb_sq,
               data_for_specific_weighted_10, 195825L,
-              main = "weighted-10-specific-no-split-01-sqrt-all_methods-js",
+              main = "weighted-10-specific-no-split-01-sqrt-all_methods_except_uw-js",
               weighted = TRUE,
               size_y_text = 8,
               height = 22,
-              best_vars = all_vars,
+              best_vars = all_vars_except_uw,
               sqrt_transf  = TRUE, show_bottom = "js")
 
 
 data_and_plot(W_all_7_prunedb_sq,
               data_for_all_weighted_7, 673883L,
-              main = "weighted-7-ALL-no-split-01-sqrt-all_methods-js",
+              main = "weighted-7-ALL-no-split-01-sqrt-all_methods_except_uw-js",
               weighted = TRUE,
               size_y_text = 8,
               height = 22,
-              best_vars = all_vars,
+              best_vars = all_vars_except_uw,
               sqrt_transf  = TRUE, show_bottom = "js")
 
 data_and_plot(W_all_10_prunedb_sq,
               data_for_all_weighted_10, 1715676L,
-              main = "weighted-10-ALL-no-split-01-sqrt-all_methods-js",
+              main = "weighted-10-ALL-no-split-01-sqrt-all_methods_except_uw-js",
               weighted = TRUE,
               size_y_text = 8,
               height = 22,
-              best_vars = all_vars,
+              best_vars = all_vars_except_uw,
               sqrt_transf  = TRUE, show_bottom = "js")
+
+
+
+## These are for supplementary material only and include all methods.  As seen
+## above, we also create figures, one for main text, the rest for suppl mat,
+## which contain only a subset of methods: all except the unweighted.
+
+## Since these have not changed, we do not rerun them for revised
+## version of ms.
+if(FALSE) {
+    data_and_plot(W_specific_7_prunedb_sq,
+                  data_for_specific_weighted_7, 76085L,
+                  main = "weighted-7-specific-no-split-01-sqrt-all_methods-js",
+                  weighted = TRUE,
+                  size_y_text = 8,
+                  height = 22,
+                  ## width = 30,
+                  best_vars = all_vars,
+                  sqrt_transf  = TRUE, show_bottom = "js")
+    data_and_plot(W_specific_10_prunedb_sq,
+                  data_for_specific_weighted_10, 195825L,
+                  main = "weighted-10-specific-no-split-01-sqrt-all_methods-js",
+                  weighted = TRUE,
+                  size_y_text = 8,
+                  height = 22,
+                  best_vars = all_vars,
+                  sqrt_transf  = TRUE, show_bottom = "js")
+
+
+    data_and_plot(W_all_7_prunedb_sq,
+                  data_for_all_weighted_7, 673883L,
+                  main = "weighted-7-ALL-no-split-01-sqrt-all_methods-js",
+                  weighted = TRUE,
+                  size_y_text = 8,
+                  height = 22,
+                  best_vars = all_vars,
+                  sqrt_transf  = TRUE, show_bottom = "js")
+
+    data_and_plot(W_all_10_prunedb_sq,
+                  data_for_all_weighted_10, 1715676L,
+                  main = "weighted-10-ALL-no-split-01-sqrt-all_methods-js",
+                  weighted = TRUE,
+                  size_y_text = 8,
+                  height = 22,
+                  best_vars = all_vars,
+                  sqrt_transf  = TRUE, show_bottom = "js")
+}
 
 list_fits <- ls(pattern = glob2rx("W_*"))
 
