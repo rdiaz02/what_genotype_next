@@ -1,3 +1,24 @@
+
+R version 4.1.1 Patched (2021-09-14 r80893) -- "Kick Things"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+> source("../common_lmertree_fits.R")
 Loading required package: grid
 Loading required package: libcoin
 Loading required package: mvtnorm
@@ -14,11 +35,13 @@ tree_best: no visible binding for global variable ‘..allvars’
 tree_best: no visible binding for global variable ‘nMut’
 tree_best: no visible binding for global variable ‘sample_size’
 tree_best: no visible binding for global variable ‘sampledProp’
+> source("../lmertree-grapcon-functions.R")
 Warning messages:
 1: In rm(my_node_bp4) : object 'my_node_bp4' not found
 2: In rm(my_node_bp5) : object 'my_node_bp5' not found
 3: In rm(my_node_empty) : object 'my_node_empty' not found
 4: In rm(my_node_bp_original) : object 'my_node_bp_original' not found
+> source("../common-lmertree-plotting-checking-pruning-functions.R")
 Loading required package: spatstat.data
 Loading required package: spatstat.geom
 spatstat.geom 2.2-2
@@ -68,69 +91,257 @@ The following objects are masked from ‘package:base’:
 
     format.pval, units
 
+> 
+> library(ggplot2)
+> library(cowplot)
+> old <- theme_set(theme_cowplot())
+> 
+> #####################################
+> 
+> ## Load data for plots
+> ## created in /plots-glms/data_for_weighted_glmertree_plots.R
+> load("../data_for_weighted_glmertree_plots.RData.gz")
+> gc()
             used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   2090807  111.7    4220665  225.5   2616022  139.8
-Vcells 222083704 1694.4  269056706 2052.8 222084832 1694.4
+Ncells   2066137  110.4    4189150  223.8   2557551  136.6
+Vcells 222040002 1694.1  268993775 2052.3 222041130 1694.1
+> dim(data_for_weighted_glmertree_plots) ## 2389559     108
 [1] 2389559     108
+> 
+> data_for_weighted_glmertree_plots[, `:=`( typeLandscape = typeLandscape_f)]
+> levels(data_for_weighted_glmertree_plots$typeLandscape_f) <- c("Rep", "LM", "RMF")
+> 
+> with(data_for_weighted_glmertree_plots, table(typeLandscape_f, typeLandscape))
                typeLandscape
 typeLandscape_f Represent. Local maxima    RMF
             Rep     910665            0      0
             LM           0       750676      0
             RMF          0            0 728218
+> 
+> 
+> ## Recall we transformed min_js
+> data_for_weighted_glmertree_plots[, `:=`( min_js = sqrt(min_js))]
+> 
+> 
+> data_for_specific_weighted_10 <-
++     data_for_weighted_glmertree_plots[(numGenes == 10) &
++                              (sample_size == 4000) &
++                              (detect == "uniform")
++                              , ]
+> 
+> data_for_specific_weighted_7 <-
++     data_for_weighted_glmertree_plots[(numGenes == 7) &
++                              (sample_size == 4000) &
++                              (detect == "uniform")
++                              , ]
+> 
+> data_for_all_weighted_10 <-
++     data_for_weighted_glmertree_plots[(numGenes == 10) , ]
+> 
+> data_for_all_weighted_7 <-
++     data_for_weighted_glmertree_plots[(numGenes == 7) , ]
+> 
+> ## The "nrow data set" for the fits are (for the checks)
+> ##  7, specific:   76085
+> ## 10, specific:  195825
+> ##  7, all     :  673883
+> ## 10, all     : 1715676
+> 
+> 
+> 
+> ## Load fitted glmertrees
+> 
+> load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_7genes_gamma_epist_withFL_Inf_NM_fits.RData.gz")
+> W_specific_7 <- lmertree_sqrt_W_Obs_minsize_01_fl_specific_7genes_gamma_epist_withFL_Inf_NM_allFL_Inf
+> 
+> 
+> load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_fits.RData.gz")
+> W_specific_10 <- lmertree_sqrt_W_Obs_minsize_01_fl_specific_10genes_gamma_epist_withFL_Inf_NM_allFL_Inf
+> 
+> load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_7genes_Inf_NM_fits.RData.gz")
+> W_all_7 <- get("lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_7genes_Inf_NM_allFL_Inf")
+> 
+> load("./keep-fit-RData-W-01-sqrt/lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_fits.RData.gz")
+> W_all_10 <- get("lmertree_sqrt_W_Obs_minsize_01_fLandscape-rsign-peaks-recoded_10genes_Inf_NM_allFL_Inf")
+> 
+> 
+> 
+> 
+> 
+> ## Check (transformation done correctly and we are fitting what we think)
+> 
+> 
+> stopifnot(isTRUE(all.equal(
++     weighted_summary_data(data_for_specific_weighted_7),
++     weighted_summary(data_party(W_specific_7$tree, 1)$min_js,
++                      data_party(W_specific_7$tree, 1)[["(weights)"]])
++ )))
+> 
+> 
+> stopifnot(isTRUE(all.equal(
++     weighted_summary_data(data_for_specific_weighted_10),
++     weighted_summary(data_party(W_specific_10$tree, 1)$min_js,
++                      data_party(W_specific_10$tree, 1)[["(weights)"]])
++ )))
+> 
+> 
+> stopifnot(isTRUE(all.equal(
++     weighted_summary_data(data_for_all_weighted_7),
++     weighted_summary(data_party(W_all_7$tree, 1)$min_js,
++                      data_party(W_all_7$tree, 1)[["(weights)"]])
++ )))
+> 
+> 
+> stopifnot(isTRUE(all.equal(
++     weighted_summary_data(data_for_all_weighted_10),
++     weighted_summary(data_party(W_all_10$tree, 1)$min_js,
++                      data_party(W_all_10$tree, 1)[["(weights)"]])
++ )))
+> 
+> 
+> 
+> weighted_summary_data(data_for_specific_weighted_7)
        0%       10%       15%       20%       25%       40%       50%       75% 
 0.0000000 0.0000000 0.1212851 0.1841334 0.2320617 0.3344816 0.3975873 0.5577500 
      100% 
 1.0000000 
+> weighted_summary_data2(data_for_specific_weighted_7) ## a lot faster
        0%       10%       15%       20%       25%       30%       35%       40% 
 0.0000000 0.0000000 0.1212250 0.1841334 0.2320607 0.2714309 0.3047159 0.3344770 
       50%       75%      100% 
 0.3975865 0.5577398 1.0000000 
+> 
+> how_many_less_than_js(data_for_specific_weighted_7) # 0.48
    prop_less        sum_w 
    0.4823749 2996.7727500 
+> 
+> Hmisc::wtd.quantile(data_for_specific_weighted_7$min_js,
++              weights = data_for_specific_weighted_7$sampledProp,
++              normwt = TRUE,
++              probs = 0.4823749)
    48.24% 
 0.3874069 
+> 
+> weighted_summary_data2(data_for_specific_weighted_10)
        0%       10%       15%       20%       25%       30%       35%       40% 
 0.0000000 0.1140453 0.1932585 0.2475516 0.2949771 0.3323927 0.3698969 0.4011804 
       50%       75%      100% 
 0.4623327 0.6147035 1.0000000 
+> how_many_less_than_js(data_for_specific_weighted_10) # 0.38
    prop_less        sum_w 
    0.3773641 3027.8625000 
+> 
+> weighted_summary_data2(data_for_all_weighted_7)
         0%        10%        15%        20%        25%        30%        35% 
 0.00000000 0.07873796 0.16899052 0.22232117 0.26891747 0.30707122 0.34139422 
        40%        50%        75%       100% 
 0.37609455 0.44457776 0.63379873 1.00000000 
+> how_many_less_than_js(data_for_all_weighted_7) # 0.42
    prop_less        sum_w 
     0.415616 27555.543550 
+> 
+> weighted_summary_data2(data_for_all_weighted_10)
        0%       10%       15%       20%       25%       30%       35%       40% 
 0.0000000 0.1789731 0.2499359 0.3051627 0.3497459 0.3933806 0.4279571 0.4636725 
       50%       75%      100% 
 0.5290890 0.7276738 1.0000000 
+> how_many_less_than_js(data_for_all_weighted_10) # 0.29
    prop_less        sum_w 
 2.930428e-01 2.773622e+04 
+> 
+> 
+> how_many_less_than_js(data_for_specific_weighted_7,
++                       threshold = sqrt(0.1)) ## .37
    prop_less        sum_w 
    0.3685512 2996.7727500 
+> how_many_less_than_js(data_for_specific_weighted_10, threshold = sqrt(0.1)) ## .27
    prop_less        sum_w 
    0.2768046 3027.8625000 
+> how_many_less_than_js(data_for_all_weighted_7, threshold = sqrt(0.1)) ## .31
    prop_less        sum_w 
 3.121118e-01 2.755554e+04 
+> how_many_less_than_js(data_for_all_weighted_10, threshold = sqrt(0.1)) ## .21
    prop_less        sum_w 
 2.120925e-01 2.773622e+04 
+> 
+> 
+> ## > weighted_summary_data2(data_for_specific_weighted_7) ## a lot faster
+> ##        0%       10%       15%       20%       25%       40%       50%       75%      100% 
+> ## 0.0000000 0.0000000 0.1212250 0.1841334 0.2320607 0.3344770 0.3975865 0.5577398 1.0000000 
+> ## > weighted_summary_data2(data_for_specific_weighted_10)
+> ##        0%       10%       15%       20%       25%       40%       50%       75%      100% 
+> ## 0.0000000 0.1140453 0.1932585 0.2475516 0.2949771 0.4011804 0.4623327 0.6147035 1.0000000 
+> ## > weighted_summary_data2(data_for_all_weighted_7)
+> ##         0%        10%        15%        20%        25%        40%        50%        75%       100% 
+> ## 0.00000000 0.07873796 0.16899052 0.22232117 0.26891747 0.37609455 0.44457776 0.63379873 1.00000000 
+> ## > weighted_summary_data2(data_for_all_weighted_10)
+> ##        0%       10%       15%       20%       25%       40%       50%       75%      100% 
+> ## 0.0000000 0.1789731 0.2499359 0.3051627 0.3497459 0.4636725 0.5290890 0.7276738 1.0000000 
+> ## > 
+> 
+> weighted_summary_data2(data_for_specific_weighted_7, c(0, .1, .15, .2, .25, .3), TRUE)
         0%        10%        15%        20%        25%        30% 
 0.00000000 0.00000000 0.01469551 0.03390511 0.05385216 0.07367471 
+> weighted_summary_data2(data_for_specific_weighted_10, c(0, .1, .15, .2, .25, .3), TRUE)
         0%        10%        15%        20%        25%        30% 
 0.00000000 0.01300633 0.03734885 0.06128178 0.08701148 0.11048488 
+> weighted_summary_data2(data_for_all_weighted_7, c(0, .1, .15, .2, .25, .3), TRUE)
          0%         10%         15%         20%         25%         30% 
 0.000000000 0.006199666 0.028557796 0.049426703 0.072316608 0.094292732 
+> weighted_summary_data2(data_for_all_weighted_10, c(0, .1, .15, .2, .25, .3), TRUE)
         0%        10%        15%        20%        25%        30% 
 0.00000000 0.03203138 0.06246794 0.09312424 0.12232222 0.15474827 
+> 
+> 
+> ## > weighted_summary_data2(data_for_specific_weighted_7, c(0, .1, .15, .2, .25, .3), TRUE)
+> ##         0%        10%        15%        20%        25%        30% 
+> ## 0.00000000 0.00000000 0.01469551 0.03390511 0.05385216 0.07367471 
+> ## > weighted_summary_data2(data_for_specific_weighted_10, c(0, .1, .15, .2, .25, .3), TRUE)
+> ##         0%        10%        15%        20%        25%        30% 
+> ## 0.00000000 0.01300633 0.03734885 0.06128178 0.08701148 0.11048488 
+> ## > weighted_summary_data2(data_for_all_weighted_7, c(0, .1, .15, .2, .25, .3), TRUE)
+> ##          0%         10%         15%         20%         25%         30% 
+> ## 0.000000000 0.006199666 0.028557796 0.049426703 0.072316608 0.094292732 
+> ## > weighted_summary_data2(data_for_all_weighted_10, c(0, .1, .15, .2, .25, .3), TRUE)
+> ##         0%        10%        15%        20%        25%        30% 
+> ## 0.00000000 0.03203138 0.06246794 0.09312424 0.12232222 0.15474827 
+> ## > 
+> 
+> threshold_fits <- c(
++     weighted_summary_data2(data_for_specific_weighted_7, c(.25), TRUE),
++     weighted_summary_data2(data_for_specific_weighted_10, c(.25), TRUE),
++     weighted_summary_data2(data_for_all_weighted_7, c(.25), TRUE),
++     weighted_summary_data2(data_for_all_weighted_10, c(.25), TRUE)
++ )
+> 
+> 
+> weighted_summary_data2(data_for_weighted_glmertree_plots, sqrt_inv = TRUE)
         0%        10%        15%        20%        25%        30%        35% 
 0.00000000 0.01668478 0.04215511 0.06773060 0.09426294 0.11934654 0.14776386 
        40%        50%        75%       100% 
 0.17554359 0.23651955 0.46662663 1.00000000 
+> ##        0%        10%        15%        20%        25%        40%        50%        75%       100% 
+> ## 0.00000000 0.01668478 0.04215511 0.06773060 0.09426294 0.17554359 0.23651955 0.46662663 1.00000000 
+> ## >
+>  
+> 
+> ## > weighted_summary_data2(data_for_weighted_glmertree_plots, sqrt_inv = TRUE)
+> ##         0%        10%        15%        20%        25%        30%        35%        40%        50%        75% 
+> ## 0.00000000 0.01668478 0.04215511 0.06773060 0.09426294 0.11934654 0.14776386 0.17554359 0.23651955 0.46662663 
+> ##       100% 
+> ## 1.00000000
+> 
+> how_many_less_than_js(data_for_weighted_glmertree_plots, sqrt(0.13)) ## 0.32
    prop_less        sum_w 
 3.183031e-01 5.529176e+04 
+> how_many_less_than_js(data_for_weighted_glmertree_plots, sqrt(0.18)) ## 0.4
    prop_less        sum_w 
 4.075522e-01 5.529176e+04 
+> 
+> ## Much better in general
+> ##  set last argument to TRUE if you want to see the plot (not by default,
+> ##  as it can break some non-interactive work)
+> scatterplot_median_intercept(W_specific_7$tree, TRUE)
 
 	Pearson's product-moment correlation
 
@@ -193,6 +404,8 @@ F-statistic:  2152 on 1 and 53 DF,  p-value: < 2.2e-16
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> ## seems much better: cors: 0.94, 0.94, slope .86
+> scatterplot_median_intercept(W_specific_10$tree, TRUE) ## .92, .91, .97
 
 	Pearson's product-moment correlation
 
@@ -252,6 +465,7 @@ Residual standard error: 0.06528 on 61 degrees of freedom
 Multiple R-squared:  0.9851,	Adjusted R-squared:  0.9848 
 F-statistic:  4022 on 1 and 61 DF,  p-value: < 2.2e-16
 
+> scatterplot_median_intercept(W_all_7$tree, TRUE, FALSE) ## .85, .90, .63: ## yes, not great
 
 	Pearson's product-moment correlation
 
@@ -314,6 +528,7 @@ F-statistic:  1254 on 1 and 69 DF,  p-value: < 2.2e-16
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> scatterplot_median_intercept(W_all_10$tree, TRUE, FALSE)
 
 	Pearson's product-moment correlation
 
@@ -376,6 +591,45 @@ F-statistic:  2314 on 1 and 64 DF,  p-value: < 2.2e-16
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> ## 0.88, 0.87, slope 0.8, bu 1.05 if through origin
+> 
+> 
+> 
+> 
+> do_prune_again <- FALSE ## pruned trees are precomputed for
+> ## repeated runs where we change grpahical stuff. No need to redo this again
+> ## If you've never pruned, well prune here
+> 
+> if(do_prune_again) {
++ W_specific_7_prunedb_sq <- fast_prune_sqrt(W_specific_7$tree, maxFit = 0.06773060,
++                                 minN = 100,  mindiff = 0.06773060/4,
++                                 statistic = "intercept", weighted = TRUE)
++ 
++ 
++ W_specific_10_prunedb_sq <- fast_prune_sqrt(W_specific_10$tree, maxFit = 0.06773060,
++                                 minN = 100,  mindiff = 0.06773060/4,
++                                 statistic = "intercept", weighted = TRUE)
++ 
++ 
++ W_all_7_prunedb_sq <- fast_prune_sqrt(W_all_7$tree, maxFit = 0.06773060,
++                               minN = 100,  mindiff = 0.06773060/4,
++                               statistic = "intercept", weighted = TRUE)
++ 
++ W_all_10_prunedb_sq <- fast_prune_sqrt(W_all_10$tree, maxFit = 0.06773060,
++                               minN = 100,  mindiff = 0.06773060/4,
++                               statistic = "intercept", weighted = TRUE)
++ 
++ 
++ ## For faster loading 
++ save(file = "pruned_trees_sqrt.RData", list = ls(pattern = glob2rx("W_*_prunedb_sq")),
++      compress = FALSE)
++ ## compress it for permanent storage
++ }
+> 
+> load("pruned_trees_sqrt.RData.gz")
+> 
+> 
+> scatterplot_median_intercept(W_specific_7_prunedb_sq, TRUE, plot = FALSE)
 
 	Pearson's product-moment correlation
 
@@ -438,6 +692,8 @@ F-statistic: 194.4 on 1 and 10 DF,  p-value: 7.047e-08
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> ## .94, .94
+> scatterplot_median_intercept(W_specific_10_prunedb_sq, TRUE, plot = FALSE)
 
 	Pearson's product-moment correlation
 
@@ -497,6 +753,8 @@ Residual standard error: 0.05247 on 11 degrees of freedom
 Multiple R-squared:  0.9824,	Adjusted R-squared:  0.9808 
 F-statistic: 613.1 on 1 and 11 DF,  p-value: 5.351e-11
 
+> ## .95, .93
+> scatterplot_median_intercept(W_all_7_prunedb_sq, TRUE, plot = FALSE)
 
 	Pearson's product-moment correlation
 
@@ -559,6 +817,8 @@ F-statistic: 54.96 on 1 and 12 DF,  p-value: 8.126e-06
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> ## .84, .81 but slope is low: 0.56, but 1.16 if forced to 0, so OK
+> scatterplot_median_intercept(W_all_10_prunedb_sq, TRUE, plot = FALSE)
 
 	Pearson's product-moment correlation
 
@@ -621,9 +881,73 @@ F-statistic:   102 on 1 and 11 DF,  p-value: 6.698e-07
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> ## .83, .87, slope .63 and 1.03 if through origin
+> 
+> 
+> print(warnings())
 Warning message:
 In cor.test.default(medians, intercepts, method = "spearman") :
   Cannot compute exact p-value with ties
+> 
+> all_vars <- c("MHN"
++             , "MHN_td"
++             , "CBN"
++             , "CAPRESE"
++             , "OT"
++             , "CBN_td"
++             , "MCCBN"
++             , "CAPRI_BIC"
++             , "CAPRI_AIC"
++             , "OT_uw"
++             , "MCCBN_td"
++             , "MCCBN_uw"
++             , "CBN_uw"
++               )
+> 
+> 
+> all_vars_except_uw <- c("MHN"
++                       , "MHN_td"
++                       , "CBN"
++                       , "CAPRESE"
++                       , "OT"
++                       , "CBN_td"
++                       , "MCCBN"
++                       , "CAPRI_BIC"
++                       , "CAPRI_AIC"
++                       ## , "OT_uw"
++                       , "MCCBN_td"
++                       ## , "MCCBN_uw"
++                       ## , "CBN_uw"
++               )
+> 
+> 
+> ## Yes, weighted boxplots and means.
+> ##    weighted argument passed to created_terminal_plot_data_2
+> ##    which returns a vector of weights
+> ##    inside my_node_bp5 we use colWeightedMeans (from matrixStats)
+> ##    That for the weighted means of performance
+> ##   And the box plot uses the weights: x <- boxplot(rep.int(yn, wn), plot = FALSE)
+> ## And yes, back transformed, so not the sqrt transformation
+> ##     we pass the sqrt_transf = TRUE
+> ##     used by my_node_bp5
+> ##     if(sqrt_transf) yn <- yn^2
+> 
+> 
+> 
+> 
+> 
+> ## Following reviewer's request, we produce figures excluding the unweighted,
+> ## to unclutter. Figures with all methods are also provided in the suppl mat.
+> 
+> data_and_plot(W_specific_7_prunedb_sq,
++               data_for_specific_weighted_7, 76085L,
++               main = "weighted-7-specific-no-split-01-sqrt-all_methods_except_uw-js",
++               weighted = TRUE,
++               size_y_text = 12,
++               height = 22,
++               ## width = 30,
++               best_vars = all_vars_except_uw,
++               sqrt_transf  = TRUE, show_bottom = "js")
 
  You can expect minor mismatches
      nrb    nodes_n nodes_n0
@@ -662,7 +986,16 @@ nrb - n
  node  14
  inside categorical_plot n length data =  60855
  node  15
- node  19
+ node  19> 
+> data_and_plot(W_specific_10_prunedb_sq,
++               data_for_specific_weighted_10, 195825L,
++               main = "weighted-10-specific-no-split-01-sqrt-all_methods_except_uw-js",
++               weighted = TRUE,
++               size_y_text = 12,
++               height = 22,
++               best_vars = all_vars_except_uw,
++               sqrt_transf  = TRUE, show_bottom = "js")
+
  You can expect minor mismatches
       nrb   nodes_n nodes_n0
 7     600  2576.480      600
@@ -702,7 +1035,17 @@ nrb - n
  node  13
  node  14
  node  17
- node  19
+ node  19> 
+> 
+> data_and_plot(W_all_7_prunedb_sq,
++               data_for_all_weighted_7, 673883L,
++               main = "weighted-7-ALL-no-split-01-sqrt-all_methods_except_uw-js",
++               weighted = TRUE,
++               size_y_text = 12,
++               height = 22,
++               best_vars = all_vars_except_uw,
++               sqrt_transf  = TRUE, show_bottom = "js")
+
  You can expect minor mismatches
       nrb    nodes_n nodes_n0
 4   18352  23216.593    18352
@@ -747,7 +1090,16 @@ nrb - n
  node  15
  node  19
  node  21
- node  23
+ node  23> 
+> data_and_plot(W_all_10_prunedb_sq,
++               data_for_all_weighted_10, 1715676L,
++               main = "weighted-10-ALL-no-split-01-sqrt-all_methods_except_uw-js",
++               weighted = TRUE,
++               size_y_text = 12,
++               height = 22,
++               best_vars = all_vars_except_uw,
++               sqrt_transf  = TRUE, show_bottom = "js")
+
  You can expect minor mismatches
        nrb    nodes_n nodes_n0
 3  1626330 1316686.47  1626330
@@ -791,6 +1143,68 @@ nrb - n
  node  21Warning messages:
 1: Removed 2 rows containing missing values (geom_point). 
 2: Removed 2 rows containing missing values (geom_point). 
+> 
+> 
+> 
+> ## These are for supplementary material only and include all methods.  As seen
+> ## above, we also create figures, one for main text, the rest for suppl mat,
+> ## which contain only a subset of methods: all except the unweighted.
+> 
+> ## Since these have not changed, we do not rerun them for revised
+> ## version of ms.
+> if(FALSE) {
++     data_and_plot(W_specific_7_prunedb_sq,
++                   data_for_specific_weighted_7, 76085L,
++                   main = "weighted-7-specific-no-split-01-sqrt-all_methods-js",
++                   weighted = TRUE,
++                   size_y_text = 8,
++                   height = 22,
++                   ## width = 30,
++                   best_vars = all_vars,
++                   sqrt_transf  = TRUE, show_bottom = "js")
++     data_and_plot(W_specific_10_prunedb_sq,
++                   data_for_specific_weighted_10, 195825L,
++                   main = "weighted-10-specific-no-split-01-sqrt-all_methods-js",
++                   weighted = TRUE,
++                   size_y_text = 8,
++                   height = 22,
++                   best_vars = all_vars,
++                   sqrt_transf  = TRUE, show_bottom = "js")
++ 
++ 
++     data_and_plot(W_all_7_prunedb_sq,
++                   data_for_all_weighted_7, 673883L,
++                   main = "weighted-7-ALL-no-split-01-sqrt-all_methods-js",
++                   weighted = TRUE,
++                   size_y_text = 8,
++                   height = 22,
++                   best_vars = all_vars,
++                   sqrt_transf  = TRUE, show_bottom = "js")
++ 
++     data_and_plot(W_all_10_prunedb_sq,
++                   data_for_all_weighted_10, 1715676L,
++                   main = "weighted-10-ALL-no-split-01-sqrt-all_methods-js",
++                   weighted = TRUE,
++                   size_y_text = 8,
++                   height = 22,
++                   best_vars = all_vars,
++                   sqrt_transf  = TRUE, show_bottom = "js")
++ }
+> 
+> list_fits <- ls(pattern = glob2rx("W_*"))
+> 
+> minint <- lapply(list_fits, function(x) {
++     if (!inherits(get(x), "modelparty")) {
++          obj <- get(x)$tree
++     } else {
++         obj <- get(x)
++     }
++     min(unlist(nodeapply(obj, ids = nodeids(obj, terminal = TRUE),
++                      FUN = function(n)
++                          n$info$coefficients[["(Intercept)"]]))
++         )})
+> 
+> lapply(minint, function(x) x^2)
 [[1]]
 [1] 0.009550728
 
@@ -815,3 +1229,5 @@ nrb - n
 [[8]]
 [1] 0.0005834646
 
+> 
+> q()
