@@ -87,22 +87,19 @@ fits. For some tables below. (E.g., in file when_good_conditions_0677.R)
 **method-comp-biol-data.R** Comparison of predictions between methods on
 the biological data, under /run-biol-examples.
 
-**./biol-data-plots** Directory with code for plots of the analyses of the
-cancer data sets.
 
-
-**plot-glms** Directory with code for fitting the lmertrees and plotting
+**./plot-glms** Directory with code for fitting the lmertrees and plotting
 the results. Additionally, also scripts for producing tables in
 Supplementary material of performance when similar CE and TD
 (when_good_conditions_0677.R)
 
-**run-biol-examples** Code and data to run the CPM analyses and obtain the
+**./run-biol-examples** Code and data to run the CPM analyses and obtain the
 transition matrices on the cancer data sets.
 
-**biol-data-plots** Plots in manuscript and supplementary material for the
+**./biol-data-plots** Plots in manuscript and supplementary material for the
 output from the analyses on the cancer data sets.
 
-**Schill-MHN** Code from Schill et al., for MHN plus additional code for
+**./Schill-MHN** Code from Schill et al., for MHN plus additional code for
 us to obtain transition matrices. Since there is no license in the
 original repository (https://github.com/RudiSchill/MHN) we have not
 provided it. The code should be left under Shcill-MHN/MHN (without
