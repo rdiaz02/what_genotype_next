@@ -1,0 +1,25 @@
+dataset_id & nGenes & sourceGenotype & sourceGenotype_nMut & sourceGenotype_nMutRel
+all_pa & 12 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, Invasion, JNK, Small_GTPase_signaling, TGF_b_signaling, Wnt_Notch_signaling & 11 & 0.916666666666667
+all_pa & 12 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, JNK, KRAS_signaling, Small_GTPase_signaling, TGF_b_signaling, Wnt_Notch_signaling & 11 & 0.916666666666667
+all_pa & 12 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, JNK, Small_GTPase_signaling, TGF_b_signaling, Wnt_Notch_signaling & 10 & 0.833333333333333
+BRCA_he_s & 4 & PIK3CA, SRPRA, TP53 & 3 & 0.75
+Col_pa & 10 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, Invasion, Small_GTPase_signaling, TGF_b_signaling & 9 & 0.9
+Col_pa & 10 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, KRAS_signaling, Small_GTPase_signaling, TGF_b_signaling & 9 & 0.9
+Col_pa & 10 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, Small_GTPase_signaling, TGF_b_signaling & 8 & 0.8
+Col_pa & 10 & Apoptosis, Control_G1_S, Hedghehog_signaling, Homophilic_Cell_adhesion, KRAS_signaling, Small_GTPase_signaling, TGF_b_signaling & 7 & 0.7
+Col_pa & 10 & Apoptosis, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, Invasion, KRAS_signaling, Small_GTPase_signaling, TGF_b_signaling & 8 & 0.8
+Col_pa & 10 & Apoptosis, Hedghehog_signaling, Homophilic_Cell_adhesion, Integrin_signaling, KRAS_signaling, Small_GTPase_signaling, TGF_b_signaling & 7 & 0.7
+Colon_CGH & 11 & -15q, -17p, -18q, -1p, -4q, -8p, +13q, +20q, +7q, +8q & 10 & 0.909090909090909
+Colon_CGH & 11 & -15q, -17p, -18q, -1p, -4q, -8p, +20q, +7q, +8q, +Xq & 10 & 0.909090909090909
+Colon_CGH & 11 & -15q, -18q, -1p, -4q, -8p, +13q, +20q, +7q, +8q, +Xq & 10 & 0.909090909090909
+Colon_CGH & 11 & -17p, -18q, -1p, -4q, -8p, +13q, +20q, +7q, +8q, +Xq & 10 & 0.909090909090909
+Colon_CGH & 11 & -17p, -18q, -4q, -8p, +13q, +20q, +7q, +8q, +Xq & 9 & 0.818181818181818
+GBM_coo & 3 & EGFR.Amp, P16.Del & 2 & 0.666666666666667
+GBM_pa & 10 & Apoptosis, Control_G1_S, dna_Damage_control, Hedghehog_signaling, Homophilic_Cell_adhesion, JNK, KRAS_signaling, TGF_b_signaling, Wnt_Notch_signaling & 9 & 0.9
+Ov_CNV & 7 & 1q+, 3q+, 4q-, 5q-, 8p-, 8q+ & 6 & 0.857142857142857
+Ov_CNV & 7 & 1q+, 3q+, 4q-, 5q-, 8q+, Xp- & 6 & 0.857142857142857
+Ov_CNV & 7 & 1q+, 4q-, 5q-, 8p-, 8q+, Xp- & 6 & 0.857142857142857
+Ov_CNV & 7 & 3q+, 4q-, 5q-, 8p-, 8q+ & 5 & 0.714285714285714
+Ov_CNV & 7 & 3q+, 4q-, 5q-, 8p-, 8q+, Xp- & 6 & 0.857142857142857
+Ov_CNV & 7 & 4q-, 5q-, 8p-, 8q+, Xp- & 5 & 0.714285714285714
+Pan_pa & 7 & dna_Damage_control, Homophilic_Cell_adhesion, JNK, KRAS_signaling, Small_GTPase_signaling, Wnt_Notch_signaling & 6 & 0.857142857142857

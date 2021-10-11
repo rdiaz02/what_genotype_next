@@ -218,3 +218,8 @@ write.table(colors_for_m,file="colors_for_m.txt",sep="\t",row.names=F,col.names=
 #        plot = gg1, dpi = 600,
 #        width = 11, height = 14)
 
+## identify specific genotypes with potentially achievable good performance
+data_pot <- data[data$`MHN-vs-MHN_td` >= 0.7 & data$`CBN-vs-MHN` <= 0.1 & data$`CBN_td-vs-MHN_td` <= 0.1,
+                 c('dataset_id','nGenes','sourceGenotype','sourceGenotype_nMut','sourceGenotype_nMutRel')]
+write.table(data_pot,file="focal_genots.txt",sep=" & ",row.names=F,col.names=T,quote=FALSE)
+
