@@ -2,7 +2,7 @@
 # Code and data for "Conditional prediction of consecutive tumor evolution using cancer progression models: What genotype comes next?"
 
 ## Juan Diaz-Colunga, Ramon Diaz-Uriarte	
-## Preprint at bioRxiv: https://doi.org/10.1101/2020.12.16.423099
+## Published in PLoS Computational Biology, https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009055
 
 ----------------------------------------------------------------------------------
 
